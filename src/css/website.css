@@ -1,0 +1,89 @@
+/* GLOBAL SECTION ================================================================================= */
+html, body { height: 100%; margin: 0; padding: 0;}
+body { background-color: #f3f3f3; font:12px 'arial'; color: #555555; }
+a { color: #C01313; }
+a:hover { }
+ul { margin: 0; padding: 0; }
+p { margin: 0 0 10px; line-height:160%; }
+img { border: 0; }
+
+.list { padding: 0 0 10px 35px; }
+.list li{ padding: 5px 0; }
+
+hr { border: 0; border-top:1px solid #C01313; margin:45px auto 20px; width:500px; }
+
+/* clears */
+.col-content:after
+{ clear:both; content:"."; display:block; font-size:0; height:0; line-height:0; overflow:hidden; }
+
+/* headings */
+h1 { font: 34px "PT Sans"; color: #c01313; margin: 0; padding: 0; }
+h2 { font: 18px "PT Sans"; color: #c01313; margin: 0 0 10px; padding: 0; }
+h3 { font-size: 13px; clear: both; margin: 0; padding: 0; line-height:170%; }
+
+/* code */
+pre {  margin: 5px 0 35px; overflow: hidden; padding: 2px; border: 1px solid #ccc; position: relative; }
+code { padding: 5px 30px; display: block; background-color: #efefef; margin: 0;  overflow: auto;}
+
+/* ------------- WRAPPER SECTION -------------- */
+#wrapper { text-align: center; }
+#wrapper-inner { position: relative; width: 768px; text-align: left; margin: 0 auto;  }
+
+/* ------------- COLUMNS SECTION -------------- */
+
+#col-main {  width: 500px; display: block; float: left; }
+#col-right { width: 228px; padding: 20px; position: relative; float: left; }
+
+.col-content {
+    background-color: #fff;
+    padding: 35px 20px 20px;
+    border: 1px solid #D0D0D0;
+    overflow: hidden;
+}
+
+/* ------------- HEADER SECTION -------------- */
+#header { height: 90px; display: block; padding: 0 20px; position: relative; overflow: hidden; z-index: 100; }
+#header h1, header h1 { width: 500px; padding: 10px 0 0; }
+.slogan { width: 500px; padding: 5px 0 0 5px; display: block; }
+.crest { float: left; margin: 0 10px 0 0; }
+
+.block {
+    margin: 0 0 25px;
+}
+.block-download{ position: absolute; right: 20px; top: 25px; }
+.download {
+    display: block;
+    color: #fff;
+    margin: 0 0 10px;
+    text-decoration: none;
+    font: 16px/38px "PT Sans";
+    text-align: center;
+    background-color: #881313;
+    border: 1px solid #791313;
+    height: 38px;
+    width: 228px;
+}
+
+/* ------------- COLUMN MAIN BLOCKS -------------- */
+
+
+
+.block-menu { list-style: none; }
+.block-menu li { display: inline; }
+.block-menu a { display: block; line-height: 35px; }
+.items { list-style: none; width: 500px; }
+.items li { overflow: hidden; padding: 0 0 20px; }
+.items p { clear: both;  }
+.button {  white-space: nowrap; color: #c01313;  }
+.foot { font-size: 11px; }
+
+.paypal { }
+.beer { }
+
+.googlead { width: 300px; margin: 15px 0 0; }
+.googlead p { line-height: 200%; }
+
+.addthis_toolbox { display:inline-block; width: 200px; }
+
+/* ------------- FOOTER SECTION -------------- */
+.footer { clear: both; padding:10px 0; display: block; text-align:center; }

@@ -1,0 +1,5 @@
+.col-main, #wrapper-inner, .col-content
+{ zoom: 1; }
+
+code {overflow: visible;}
+pre { overflow: auto; }

@@ -1,0 +1,36 @@
+{
+  "name": "tinyscrollbar",
+  "version": "2.0.0",
+  "description": "A lightweight cross browser jQuery based scrollbar. ",
+  "main": "index.js",
+  "directories": {
+    "example": "example"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/wieringen/tinyscrollbar.git"
+  },
+  "keywords": [
+    "UI",
+    "jQuery",
+    "Mobile",
+    "scrollbar",
+    "javascript"
+  ],
+  "author": "Maarten Baijs",
+  "license": "BSD",
+  "bugs": {
+    "url": "https://github.com/wieringen/tinyscrollbar/issues"
+  },
+  "devDependencies": {
+    "grunt": "~0.4.1",
+    "grunt-contrib-copy": "~0.4.1",
+    "grunt-contrib-clean": "~0.5.0",
+    "grunt-contrib-uglify": "~0.2.7",
+    "grunt-text-replace": "~0.3.9",
+    "grunt-contrib-compress": "~0.5.2"
+  }
+}
