@@ -7,9 +7,6 @@ ul { margin: 0; padding: 0; }
 p { margin: 0 0 10px; line-height:160%; }
 img { border: 0; }
 
-.list { padding: 0 0 10px 35px; }
-.list li{ padding: 5px 0; }
-
 /* clears */
 .col-content:after
 { clear:both; content:"."; display:block; font-size:0; height:0; line-height:0; overflow:hidden; }
@@ -93,11 +90,9 @@ header h1 { width: 500px; padding: 10px 0 0; }
 .block-menu { list-style: none; }
 .block-menu li { display: inline; }
 .block-menu a { display: block; line-height: 35px; }
-.items { list-style: none; width: 500px; }
-.items li { overflow: hidden; padding: 0 0 20px; }
-.items p { clear: both;  }
-.button {  white-space: nowrap; color: #c01313;  }
-.foot { font-size: 11px; }
+
+.list { padding: 0 0 10px 35px; }
+.list li{ padding: 5px 0; }
 
 .addthis_toolbox { display:inline-block; width: 200px; }
 
