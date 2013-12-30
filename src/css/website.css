@@ -10,8 +10,6 @@ img { border: 0; }
 .list { padding: 0 0 10px 35px; }
 .list li{ padding: 5px 0; }
 
-hr { border: 0; border-top:1px solid #C01313; margin:45px auto 20px; width:500px; }
-
 /* clears */
 .col-content:after
 { clear:both; content:"."; display:block; font-size:0; height:0; line-height:0; overflow:hidden; }
@@ -25,6 +23,32 @@ h3 { font-size: 13px; clear: both; margin: 0; padding: 0; line-height:170%; }
 pre {  margin: 5px 0 35px; overflow: hidden; padding: 2px; border: 1px solid #ccc; position: relative; }
 code { padding: 5px 30px; display: block; background-color: #efefef; margin: 0;  overflow: auto;}
 
+@media screen {
+    .str { color: #C01313 }  /* string content */
+    .kwd { color: #008 }  /* a keyword */
+    .com { color: #660 }  /* a comment */
+    .typ { color: #606 }  /* a type name */
+    .lit { color: #066 }  /* a literal value */
+    /* punctuation, lisp open bracket, lisp close bracket */
+    .pun, .opn, .clo { color: #660 }
+    .tag { color: #008 }  /* a markup tag name */
+    .atn { color: #606 }  /* a markup attribute name */
+    .atv { color: #080 }  /* a markup attribute value */
+    .dec, .var { color: #606 }  /* a declaration; a variable name */
+    .fun { color: red }  /* a function name */
+}
+
+@media print, projection {
+    .str { color: #060 }
+    .kwd { color: #006; font-weight: bold }
+    .com { color: #600; font-style: italic }
+    .typ { color: #404; font-weight: bold }
+    .lit { color: #044 }
+    .pun, .opn, .clo { color: #440 }
+    .tag { color: #006; font-weight: bold }
+    .atn { color: #404 }
+    .atv { color: #060 }
+}
 /* ------------- WRAPPER SECTION -------------- */
 #wrapper { text-align: center; }
 #wrapper-inner { position: relative; width: 768px; text-align: left; margin: 0 auto;  }
@@ -43,7 +67,8 @@ code { padding: 5px 30px; display: block; background-color: #efefef; margin: 0; 
 
 /* ------------- HEADER SECTION -------------- */
 #header { height: 90px; display: block; padding: 0 20px; position: relative; overflow: hidden; z-index: 100; }
-#header h1, header h1 { width: 500px; padding: 10px 0 0; }
+#header h1,
+header h1 { width: 500px; padding: 10px 0 0; }
 .slogan { width: 500px; padding: 5px 0 0 5px; display: block; }
 .crest { float: left; margin: 0 10px 0 0; }
 
@@ -65,9 +90,6 @@ code { padding: 5px 30px; display: block; background-color: #efefef; margin: 0; 
 }
 
 /* ------------- COLUMN MAIN BLOCKS -------------- */
-
-
-
 .block-menu { list-style: none; }
 .block-menu li { display: inline; }
 .block-menu a { display: block; line-height: 35px; }
@@ -77,13 +99,7 @@ code { padding: 5px 30px; display: block; background-color: #efefef; margin: 0; 
 .button {  white-space: nowrap; color: #c01313;  }
 .foot { font-size: 11px; }
 
-.paypal { }
-.beer { }
-
-.googlead { width: 300px; margin: 15px 0 0; }
-.googlead p { line-height: 200%; }
-
 .addthis_toolbox { display:inline-block; width: 200px; }
 
 /* ------------- FOOTER SECTION -------------- */
-.footer { clear: both; padding:10px 0; display: block; text-align:center; }
+.footer { width: 500px; clear: both; padding:10px 0; display: block; text-align:center; }

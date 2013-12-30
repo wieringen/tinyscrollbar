@@ -33,6 +33,14 @@ module.exports = ( grunt ) ->
                 ,   { expand: true, cwd: "src", src: "index.html",  dest: "dist/src" }
                 ]
 
+            example :
+
+                files : [
+                    { expand: true, cwd: "src", src: "example/**/*",  dest: "dist/src/" }
+                ,   { expand: true, cwd: "dist/src/js", src: "jquery.tinyscrollbar*",  dest: "dist/src/example/js" }
+                ]
+
+
         #  Validate javascript files with jsHint.
         #
         jshint :
@@ -86,13 +94,37 @@ module.exports = ( grunt ) ->
 
                 options :
 
-                    archive: "dist/<%= pkg.name %>-<%= pkg.version %>.zip"
+                    archive: "dist/dist-<%= pkg.version %>.zip"
 
-                expand  : true
-                cwd     : "dist/src"
-                src     : ["**/*"]
-                dest    : "."
+                expand : true
+                cwd    : "dist/src"
+                src    : ["**/*"]
+                dest   : "."
 
+            example :
+
+                options :
+
+                    archive: "dist/src/<%= pkg.name %>-<%= pkg.version %>.zip"
+
+                expand : true
+                cwd    : "dist/src/example"
+                src    : ["**/*"]
+                dest   : "."
+
+       "ftp-deploy" :
+
+            dist :
+
+                auth :
+
+                    host    : "192.168.254.15"
+                    port    : 21
+                    authKey : "baijs"
+
+                src: "dist/src"
+                dest: "/tinyscrollbar"
+                exclusions: []
 
     #  Load all the task modules we need.
     #
@@ -101,6 +133,7 @@ module.exports = ( grunt ) ->
     grunt.loadNpmTasks "grunt-contrib-uglify"
     grunt.loadNpmTasks "grunt-text-replace"
     grunt.loadNpmTasks "grunt-contrib-compress"
+    grunt.loadNpmTasks "grunt-ftp-deploy"
 
     #  Distribution build
     #
@@ -112,5 +145,19 @@ module.exports = ( grunt ) ->
             "copy:dist"
             "uglify:dist"
             "compress:dist"
+            "replace:dist"
+            "copy:example"
+            "compress:example"
+        ]
+    )
+
+    #  Upload dist to baijs.nl
+    #
+    grunt.registerTask(
+
+        "ftp"
+    ,   [
+            "default"
+            "ftp-deploy:dist"
         ]
     )
