@@ -1,4 +1,4 @@
-[tinyscrollbar](http://baijs.com/tinyscrollbar) [![Build Status](https://secure.travis-ci.org/wieringen/tinyscrolbar.png?branch=master)](http://travis-ci.org/wieringen/tinyscrollbar)
+[tinyscrollbar](http://baijs.com/tinyscrollbar) [![Build Status](https://secure.travis-ci.org/wieringen/tinyscrollbar.png?branch=master)](http://travis-ci.org/wieringen/tinyscrollbar)
 ==================================================
 
 What you need to build your own version of tinyscrollbar
