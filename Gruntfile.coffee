@@ -50,8 +50,7 @@ module.exports = ( grunt ) ->
                 jshintrc : ".jshintrc"
 
             all : [
-                #"src/lib/*.js"
-                "src/core/**/*.js"
+                "src/js/jquery.tinyscrollbar.js"
             ]
 
         #  Minify the javascript.
@@ -112,19 +111,18 @@ module.exports = ( grunt ) ->
                 src    : ["**/*"]
                 dest   : "."
 
-       "ftp-deploy" :
+        "ftp-deploy":
 
-            dist :
+            dist:
 
-                auth :
+                auth:
 
-                    host    : "192.168.254.15"
+                    host    : "ftp.baijs.nl"
                     port    : 21
-                    authKey : "baijs"
+                    authKey : "tinyscrollbar"
 
                 src: "dist/src"
-                dest: "/tinyscrollbar"
-                exclusions: []
+                dest: "/"
 
     #  Load all the task modules we need.
     #
@@ -134,6 +132,7 @@ module.exports = ( grunt ) ->
     grunt.loadNpmTasks "grunt-text-replace"
     grunt.loadNpmTasks "grunt-contrib-compress"
     grunt.loadNpmTasks "grunt-ftp-deploy"
+    grunt.loadNpmTasks "grunt-contrib-jshint"
 
     #  Distribution build
     #
@@ -141,6 +140,7 @@ module.exports = ( grunt ) ->
 
         "default"
     ,   [
+            "jshint"
             "clean:dist"
             "copy:dist"
             "uglify:dist"

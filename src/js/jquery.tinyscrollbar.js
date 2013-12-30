@@ -205,7 +205,7 @@
 
                 if(options.scrollInvert)
                 {
-                    thumbPositionDelta = mousePosition - mousePositionNew
+                    thumbPositionDelta = mousePosition - mousePositionNew;
                 }
 
                 thumbPositionNew = Math.min((trackSize - thumbSize), Math.max(0, thumbPosition + thumbPositionDelta));
