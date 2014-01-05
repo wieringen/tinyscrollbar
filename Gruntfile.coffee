@@ -29,6 +29,8 @@ module.exports = ( grunt ) ->
                 files : [
                     { expand: true, cwd: "src", src: "images/**/*", dest: "dist/src" }
                 ,   { expand: true, cwd: "src", src: "css/**/*",  dest: "dist/src" }
+                ,   { expand: true, cwd: "node_modules/baijs", src: "css/**/*",  dest: "dist/src" }
+                ,   { expand: true, cwd: "node_modules/baijs", src: "js/**/*",  dest: "dist/src" }
                 ,   { expand: true, cwd: "src", src: "js/**/*",  dest: "dist/src" }
                 ,   { expand: true, cwd: "src", src: "index.html",  dest: "dist/src" }
                 ]
