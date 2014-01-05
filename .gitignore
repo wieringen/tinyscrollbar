@@ -1,4 +1,5 @@
 .DS_Store
+.ftppass
 dist/
 node_modules/
 *.sublime-project

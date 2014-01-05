@@ -29,7 +29,7 @@
         }
     };
 
-    $.fn.tinyscrollbar = function( params )
+    $.fn.tinyscrollbar = function(params)
     {
         var options = $.extend( {}, $.tiny.scrollbar.options, params );
 

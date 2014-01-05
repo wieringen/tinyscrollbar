@@ -37,7 +37,7 @@ module.exports = ( grunt ) ->
 
                 files : [
                     { expand: true, cwd: "src", src: "example/**/*",  dest: "dist/src/" }
-                ,   { expand: true, cwd: "dist/src/js", src: "jquery.tinyscrollbar*",  dest: "dist/src/example/js" }
+                ,   { expand: true, cwd: "dist/src/js", src: "jquery.<%= pkg.name %>*",  dest: "dist/src/example/js" }
                 ]
 
 
@@ -50,7 +50,7 @@ module.exports = ( grunt ) ->
                 jshintrc : ".jshintrc"
 
             all : [
-                "src/js/jquery.tinyscrollbar.js"
+                "src/js/jquery.<%= pkg.name %>.js"
             ]
 
         #  Minify the javascript.
@@ -119,7 +119,7 @@ module.exports = ( grunt ) ->
 
                     host    : "ftp.baijs.nl"
                     port    : 21
-                    authKey : "tinyscrollbar"
+                    authKey : "<%= pkg.name %>"
 
                 src: "dist/src"
                 dest: "/"
