@@ -85,6 +85,10 @@ module.exports = ( grunt ) ->
                         from : /@@bnr@@/ig
                     ,   to   : "<%= pkg.version %>"
                     }
+                ,   {
+                        from : /..\/node_modules\/baijs\//ig
+                    ,   to   : ""
+                    }
                 ]
 
         # Make a zipfile.
