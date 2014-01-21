@@ -46,6 +46,15 @@
         return $( this ).data( 'tsb' ).update( sScroll );
     };
 
+    $.fn.tinyscrollbar_remove = function()
+    {
+        var sb = $(this).data('tsb');
+        if (sb) {
+            sb.remove();
+            $( this ).data( 'tsb', null );
+        }
+    };
+
     function Scrollbar($container, options)
     {
         var self        = this
@@ -79,6 +88,37 @@
 
             return self;
         }
+
+        this.remove = function()
+        {
+            if(hasTouchEvents)
+            {
+                $viewport[0].ontouchstart = null;
+            }
+            else
+            {
+                $thumb.unbind("mousedown", start);
+                $track.unbind("mouseup", drag);
+            }
+
+            if(options.wheel && window.addEventListener)
+            {
+                $container[0].removeEventListener("DOMMouseScroll", wheel, false );
+                $container[0].removeEventListener("mousewheel", wheel, false );
+            }
+            else
+            {
+                $container[0].onmousewheel = wheel;
+            }
+
+            // Remove style properties
+            $thumb.css(posiLabel, 'auto');
+            $overview.css(posiLabel, 'auto');
+
+            $scrollbar.css(sizeLabel, 'auto');
+            $track.css(sizeLabel, 'auto');
+            $thumb.css(sizeLabel, 'auto');
+        };
 
         this.update = function(scrollTo)
         {
