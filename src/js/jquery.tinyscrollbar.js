@@ -188,7 +188,7 @@
 
                 contentPosition -= wheelSpeedDelta * options.wheelSpeed;
                 contentPosition = Math.min((contentSize - viewportSize), Math.max(0, contentPosition));
-                if(contentPosition >= (contentSize - viewportSize) && scrollCallback !== null) {
+                if(contentPosition >= (contentSize - viewportSize) && typeof scrollCallback == "function" ) {
                     scrollCallback();
                 }
                 
@@ -230,7 +230,7 @@
             $(document).unbind("mouseup", end);
             $thumb.unbind("mouseup", end);
             document.ontouchmove = document.ontouchend = null;
-            if(contentPosition >= (contentSize - viewportSize) && scrollCallback !== null) {
+            if(contentPosition >= (contentSize - viewportSize) && typeof scrollCallback == "function") {
                 scrollCallback();
             }
         }
