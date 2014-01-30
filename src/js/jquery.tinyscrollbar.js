@@ -26,6 +26,7 @@
             ,   scrollInvert : false  // Enable invert style scrolling
             ,   trackSize    : false  // set the size of the scrollbar to auto or a fixed number.
             ,   thumbSize    : false  // set the size of the thumb to auto or a fixed number.
+            ,   scrollCallback : null // called when content is scrolled to bottom.
         }
     };
 
@@ -64,6 +65,8 @@
         ,   thumbSize       = 0
         ,   thumbPosition   = 0
         ,   mousePosition   = 0
+        
+        ,   scrollCallback  = null
 
         ,   isHorizontal   = options.axis === 'x'
         ,   hasTouchEvents = "ontouchstart" in document.documentElement
@@ -89,6 +92,7 @@
             trackSize       = options.trackSize || viewportSize;
             thumbSize       = Math.min(trackSize, Math.max(0, (options.thumbSize || (trackSize * contentRatio))));
             trackRatio      = options.thumbSize ? (contentSize - viewportSize) / (trackSize - thumbSize) : (contentSize / trackSize);
+            scrollCallback  = options.scrollCallback || null;
 
             $scrollbar.toggleClass("disable", contentRatio >= 1);
 
@@ -184,7 +188,10 @@
 
                 contentPosition -= wheelSpeedDelta * options.wheelSpeed;
                 contentPosition = Math.min((contentSize - viewportSize), Math.max(0, contentPosition));
-
+                if(contentPosition >= (contentSize - viewportSize) && scrollCallback !== null) {
+                    scrollCallback();
+                }
+                
                 $thumb.css(posiLabel, contentPosition / trackRatio);
                 $overview.css(posiLabel, -contentPosition);
 
@@ -223,6 +230,9 @@
             $(document).unbind("mouseup", end);
             $thumb.unbind("mouseup", end);
             document.ontouchmove = document.ontouchend = null;
+            if(contentPosition >= (contentSize - viewportSize) && scrollCallback !== null) {
+                scrollCallback();
+            }
         }
 
         return initialize();
