@@ -10,7 +10,12 @@
 	<script type="text/javascript" src="js/jquery.tinyscrollbar.min.js"></script>
 	<script type="text/javascript">
 		$(document).ready(function(){
-			$('#scrollbar1').tinyscrollbar();	
+            $('.startWatchingButton').click(function () {
+                $('#scrollbar1').tinyscrollbar();
+            });
+            $('.stopWatchingButton').click(function () {
+                $('#scrollbar1').tinyscrollbar_remove();
+            });
 		});
 	</script>	
 		
@@ -33,6 +38,10 @@
 				<p>Aliquam accumsan aliquam urna, id vulputate ante posuere eu. Nullam pretium convallis tincidunt. Duis vitae odio arcu, ut fringilla enim. Nam ante eros, vestibulum sit amet rhoncus et, vehicula quis tellus. Curabitur sed iaculis odio. Praesent vitae ligula id tortor ornare luctus. Integer placerat urna non ligula sollicitudin vestibulum. Nunc vestibulum auctor massa, at varius nibh scelerisque eget. Aliquam convallis, nunc non laoreet mollis, neque est mattis nisl, nec accumsan velit nunc ut arcu. Donec quis est mauris, eu auctor nulla. Fusce leo diam, tempus a varius sit amet, auctor ac metus. Nam turpis nulla, fermentum in rhoncus et, auctor id sem. Aliquam id libero eu neque elementum lobortis nec et odio.</p>                   
 			</div>
 		</div>
-	</div>	
+	</div>
+    <div>
+        <button class="startWatchingButton">Start Watching</button>
+        <button class="stopWatchingButton">Stop Watching</button>
+    </div>
 </body>
 </html>
