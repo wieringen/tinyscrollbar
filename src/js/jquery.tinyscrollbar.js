@@ -82,13 +82,13 @@
 
         this.update = function(scrollTo)
         {
-            sizeLabelCap    = sizeLabel.charAt(0).toUpperCase() + sizeLabel.slice(1).toLowerCase();
-            viewportSize    = $viewport[0]['offset'+ sizeLabelCap];
-            contentSize     = $overview[0]['scroll'+ sizeLabelCap];
-            contentRatio    = viewportSize / contentSize;
-            trackSize       = options.trackSize || viewportSize;
-            thumbSize       = Math.min(trackSize, Math.max(0, (options.thumbSize || (trackSize * contentRatio))));
-            trackRatio      = options.thumbSize ? (contentSize - viewportSize) / (trackSize - thumbSize) : (contentSize / trackSize);
+            var sizeLabelCap = sizeLabel.charAt(0).toUpperCase() + sizeLabel.slice(1).toLowerCase();
+            viewportSize     = $viewport[0]['offset'+ sizeLabelCap];
+            contentSize      = $overview[0]['scroll'+ sizeLabelCap];
+            contentRatio     = viewportSize / contentSize;
+            trackSize        = options.trackSize || viewportSize;
+            thumbSize        = Math.min(trackSize, Math.max(0, (options.thumbSize || (trackSize * contentRatio))));
+            trackRatio       = options.thumbSize ? (contentSize - viewportSize) / (trackSize - thumbSize) : (contentSize / trackSize);
 
             $scrollbar.toggleClass("disable", contentRatio >= 1);
 
@@ -200,16 +200,16 @@
         {
             if(contentRatio < 1)
             {
-                mousePositionNew   = isHorizontal ? event.pageX : event.pageY;
-                thumbPositionDelta = mousePositionNew - mousePosition;
+                var mousePositionNew   = isHorizontal ? event.pageX : event.pageY;
+                var thumbPositionDelta = mousePositionNew - mousePosition;
 
                 if(options.scrollInvert)
                 {
                     thumbPositionDelta = mousePosition - mousePositionNew;
                 }
 
-                thumbPositionNew = Math.min((trackSize - thumbSize), Math.max(0, thumbPosition + thumbPositionDelta));
-                contentPosition  = thumbPositionNew * trackRatio;
+                var thumbPositionNew = Math.min((trackSize - thumbSize), Math.max(0, thumbPosition + thumbPositionDelta));
+                contentPosition      = thumbPositionNew * trackRatio;
 
                 $thumb.css(posiLabel, thumbPositionNew);
                 $overview.css(posiLabel, -contentPosition);
