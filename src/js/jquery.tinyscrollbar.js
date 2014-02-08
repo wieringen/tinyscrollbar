@@ -188,7 +188,7 @@
 
         function drag( event )
         {
-            if(this.contentRatio < 1)
+            if(self.contentRatio < 1)
             {
                 var mousePositionNew   = isHorizontal ? event.pageX : event.pageY
                 ,   thumbPositionDelta = mousePositionNew - mousePosition
@@ -200,7 +200,7 @@
                 }
 
                 var thumbPositionNew = Math.min((self.trackSize - self.thumbSize), Math.max(0, self.thumbPosition + thumbPositionDelta));
-                self.contentPosition = thumbPositionNew * this.trackRatio;
+                self.contentPosition = thumbPositionNew * self.trackRatio;
 
                 $container.trigger("move");
 
