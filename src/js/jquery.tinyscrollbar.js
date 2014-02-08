@@ -15,39 +15,26 @@
     }
 }(function ($)
 {
-    $.tiny = $.tiny || { };
 
-    $.tiny.scrollbar = {
-        options: {
-                axis         : 'y'    // vertical or horizontal scrollbar? ( x || y ).
-            ,   wheel        : true   // enable or disable the mousewheel;
-            ,   wheelSpeed   : 40     // how many pixels must the mouswheel scroll at a time.
-            ,   wheelLock    : true   // return mouswheel to browser if there is no more content.
-            ,   scrollInvert : false  // Enable invert style scrolling
-            ,   trackSize    : false  // set the size of the scrollbar to auto or a fixed number.
-            ,   thumbSize    : false  // set the size of the thumb to auto or a fixed number.
-        }
-    };
-
-    $.fn.tinyscrollbar = function(params)
-    {
-        var options = $.extend( {}, $.tiny.scrollbar.options, params );
-
-        this.each(function()
+    var pluginName = "tinyscrollbar"
+    ,   defaults   =
         {
-            $(this).data('tsb', new Scrollbar( $( this ), options ) );
-        });
+            axis           : 'y'           // vertical or horizontal scrollbar? ( x || y ).
+        ,   wheel          : true          // enable or disable the mousewheel;
+        ,   wheelSpeed     : 40            // how many pixels must the mouswheel scroll at a time.
+        ,   wheelLock      : true          // return mouswheel to browser if there is no more content.
+        ,   scrollInvert   : false         // Enable invert style scrolling
+        ,   trackSize      : false         // set the size of the scrollbar to auto or a fixed number.
+        ,   thumbSize      : false         // set the size of the thumb to auto or a fixed number.
+        }
+    ;
 
-        return this;
-    };
-
-    $.fn.tinyscrollbar_update = function(sScroll)
+    function Plugin($container, options)
     {
-        return $( this ).data( 'tsb' ).update( sScroll );
-    };
+        this.options   = $.extend({}, defaults, options);
+        this._defaults = defaults;
+        this._name     = pluginName;
 
-    function Scrollbar($container, options)
-    {
         var self        = this
         ,   $viewport   = $container.find(".viewport")
         ,   $overview   = $container.find(".overview")
@@ -55,22 +42,23 @@
         ,   $track      = $scrollbar.find(".track")
         ,   $thumb      = $scrollbar.find(".thumb")
 
-        ,   viewportSize    = 0
-        ,   contentSize     = 0
-        ,   contentPosition = 0
-        ,   contentRatio    = 0
-        ,   trackSize       = 0
-        ,   trackRatio      = 0
-        ,   thumbSize       = 0
-        ,   thumbPosition   = 0
         ,   mousePosition   = 0
 
-        ,   isHorizontal   = options.axis === 'x'
+        ,   isHorizontal   = this.options.axis === 'x'
         ,   hasTouchEvents = "ontouchstart" in document.documentElement
 
         ,   sizeLabel = isHorizontal ? "width" : "height"
         ,   posiLabel = isHorizontal ? "left" : "top"
         ;
+
+        this.contentPosition = 0;
+        this.viewportSize    = 0;
+        this.contentSize     = 0;
+        this.contentRatio    = 0;
+        this.trackSize       = 0;
+        this.trackRatio      = 0;
+        this.thumbSize       = 0;
+        this.thumbPosition   = 0;
 
         function initialize()
         {
@@ -82,28 +70,28 @@
 
         this.update = function(scrollTo)
         {
-            var sizeLabelCap = sizeLabel.charAt(0).toUpperCase() + sizeLabel.slice(1).toLowerCase();
-            viewportSize     = $viewport[0]['offset'+ sizeLabelCap];
-            contentSize      = $overview[0]['scroll'+ sizeLabelCap];
-            contentRatio     = viewportSize / contentSize;
-            trackSize        = options.trackSize || viewportSize;
-            thumbSize        = Math.min(trackSize, Math.max(0, (options.thumbSize || (trackSize * contentRatio))));
-            trackRatio       = options.thumbSize ? (contentSize - viewportSize) / (trackSize - thumbSize) : (contentSize / trackSize);
+            var sizeLabelCap  = sizeLabel.charAt(0).toUpperCase() + sizeLabel.slice(1).toLowerCase();
+            this.viewportSize = $viewport[0]['offset'+ sizeLabelCap];
+            this.contentSize  = $overview[0]['scroll'+ sizeLabelCap];
+            this.contentRatio = this.viewportSize / this.contentSize;
+            this.trackSize    = this.options.trackSize || this.viewportSize;
+            this.thumbSize    = Math.min(this.trackSize, Math.max(0, (this.options.thumbSize || (this.trackSize * this.contentRatio))));
+            this.trackRatio   = this.options.thumbSize ? (this.contentSize - this.viewportSize) / (this.trackSize - this.thumbSize) : (this.contentSize / this.trackSize);
 
-            $scrollbar.toggleClass("disable", contentRatio >= 1);
+            $scrollbar.toggleClass("disable", this.contentRatio >= 1);
 
             switch (scrollTo)
             {
                 case "bottom":
-                    contentPosition = contentSize - viewportSize;
+                    this.contentPosition = this.contentSize - this.viewportSize;
                     break;
 
                 case "relative":
-                    contentPosition = Math.min(contentSize - viewportSize, Math.max(0, contentPosition));
+                    this.contentPosition = Math.min(this.contentSize - this.viewportSize, Math.max(0, this.contentPosition));
                     break;
 
                 default:
-                    contentPosition = parseInt(scrollTo, 10) || 0;
+                    this.contentPosition = parseInt(scrollTo, 10) || 0;
             }
 
             setSize();
@@ -111,13 +99,13 @@
 
         function setSize()
         {
-            $thumb.css(posiLabel, contentPosition / trackRatio);
-            $overview.css(posiLabel, -contentPosition);
+            $thumb.css(posiLabel, self.contentPosition / self.trackRatio);
+            $overview.css(posiLabel, -self.contentPosition);
             mousePosition = $thumb.offset()[posiLabel];
 
-            $scrollbar.css(sizeLabel, trackSize);
-            $track.css(sizeLabel, trackSize);
-            $thumb.css(sizeLabel, thumbSize);
+            $scrollbar.css(sizeLabel, self.trackSize);
+            $track.css(sizeLabel, self.trackSize);
+            $thumb.css(sizeLabel, self.thumbSize);
         }
 
         function setEvents()
@@ -139,12 +127,12 @@
                 $track.bind("mouseup", drag);
             }
 
-            if(options.wheel && window.addEventListener)
+            if(self.options.wheel && window.addEventListener)
             {
                 $container[0].addEventListener("DOMMouseScroll", wheel, false );
                 $container[0].addEventListener("mousewheel", wheel, false );
             }
-            else if(options.wheel)
+            else if(self.options.wheel)
             {
                 $container[0].onmousewheel = wheel;
             }
@@ -154,8 +142,8 @@
         {
             $("body").addClass("noSelect");
 
-            mousePosition = isHorizontal ? event.pageX : event.pageY;
-            thumbPosition = parseInt($thumb.css(posiLabel), 10) || 0;
+            mousePosition      = isHorizontal ? event.pageX : event.pageY;
+            self.thumbPosition = parseInt($thumb.css(posiLabel), 10) || 0;
 
             if(hasTouchEvents)
             {
@@ -176,19 +164,21 @@
 
         function wheel(event)
         {
-            if(contentRatio < 1)
+            if(self.contentRatio < 1)
             {
                 var eventObject     = event || window.event
                 ,   wheelSpeedDelta = eventObject.wheelDelta ? eventObject.wheelDelta / 120 : -eventObject.detail / 3
                 ;
 
-                contentPosition -= wheelSpeedDelta * options.wheelSpeed;
-                contentPosition = Math.min((contentSize - viewportSize), Math.max(0, contentPosition));
+                self.contentPosition -= wheelSpeedDelta * self.options.wheelSpeed;
+                self.contentPosition = Math.min((self.contentSize - self.viewportSize), Math.max(0, self.contentPosition));
 
-                $thumb.css(posiLabel, contentPosition / trackRatio);
-                $overview.css(posiLabel, -contentPosition);
+                $container.trigger("move");
 
-                if(options.wheelLock || (contentPosition !== (contentSize - viewportSize) && contentPosition !== 0))
+                $thumb.css(posiLabel, self.contentPosition / self.trackRatio);
+                $overview.css(posiLabel, -self.contentPosition);
+
+                if(self.options.wheelLock || (self.contentPosition !== (self.contentSize - self.viewportSize) && self.contentPosition !== 0))
                 {
                     eventObject = $.event.fix(eventObject);
                     eventObject.preventDefault();
@@ -198,21 +188,24 @@
 
         function drag( event )
         {
-            if(contentRatio < 1)
+            if(this.contentRatio < 1)
             {
-                var mousePositionNew   = isHorizontal ? event.pageX : event.pageY;
-                var thumbPositionDelta = mousePositionNew - mousePosition;
+                var mousePositionNew   = isHorizontal ? event.pageX : event.pageY
+                ,   thumbPositionDelta = mousePositionNew - mousePosition
+                ;
 
-                if(options.scrollInvert)
+                if(self.options.scrollInvert)
                 {
                     thumbPositionDelta = mousePosition - mousePositionNew;
                 }
 
-                var thumbPositionNew = Math.min((trackSize - thumbSize), Math.max(0, thumbPosition + thumbPositionDelta));
-                contentPosition      = thumbPositionNew * trackRatio;
+                var thumbPositionNew = Math.min((self.trackSize - self.thumbSize), Math.max(0, self.thumbPosition + thumbPositionDelta));
+                self.contentPosition = thumbPositionNew * this.trackRatio;
+
+                $container.trigger("move");
 
                 $thumb.css(posiLabel, thumbPositionNew);
-                $overview.css(posiLabel, -contentPosition);
+                $overview.css(posiLabel, -self.contentPosition);
             }
         }
 
@@ -227,4 +220,15 @@
 
         return initialize();
     }
+
+    $.fn[pluginName] = function(options)
+    {
+        return this.each(function()
+        {
+            if(!$.data(this, "plugin_" + pluginName))
+            {
+                $.data(this, "plugin_" + pluginName, new Plugin($(this), options));
+            }
+        });
+    };
 }));

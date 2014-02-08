@@ -64,7 +64,7 @@
                     <div class="block">
                         <!-- google_ad_section_start -->
                         <h2>What is it?</h2>
-                        <p>Tiny Scrollbar is a nice and elegant way to enable the scrolling of content on mobile and desktop devices. It was built using the javascript jQuery library. Tiny scrollbar was designed to be a dynamic lightweight utility that gives webdesigners a powerfull way of enhancing a websites user interface. </p>
+                        <p>Tiny Scrollbar is a nice and elegant way to enable the scrolling of content on mobile and desktop devices. It was built using the javascript jQuery library. Tiny scrollbar was designed to be a dynamic lightweight utility that gives webdesigners a powerfull way of enhancing a websites user interface. A basic example and a little more advanced infinite scroll example are included in the download.</p>
                         <!-- google_ad_section_end -->
 
                         <!-- AddThis Button BEGIN -->
@@ -80,6 +80,7 @@
                     <div class="block">
                         <h2>Features</h2>
                         <ul class="list">
+                            <li><strong>Completely rewritten!</strong></li>
                             <li><strong>IOS and Android support.</strong></li>
                             <li>AMD, Node, requirejs and commonjs support.</li>
                             <li>Can scroll vertical or horizontal</li>
@@ -266,11 +267,12 @@ $(document).ready(function()
                                         var typeOfUpdate = $(this).attr("data-update") || ""
                                         ,   textId       = $(this).attr("data-text") || 0
                                         ,   textNew      = $texts[textId].innerHTML
+                                        ,   scrollbar5   = $scrollbar5.data("plugin_tinyscrollbar")
                                         ;
 
                                         $overview.html(textNew);
 
-                                        $scrollbar5.tinyscrollbar_update(typeOfUpdate);
+                                        scrollbar5.update(typeOfUpdate);
 
                                         return false;
                                     });
@@ -302,8 +304,8 @@ $(document).ready(function()
                     </div>
 
                     <pre class="prettyprint"><code>
-var scrollbar5 = $("#scrollbar5");
-scrollbar5.tinyscrollbar();
+var $scrollbar5 = $("#scrollbar5");
+$scrollbar5.tinyscrollbar();
 
 // Some madeup function that does changes to the content
 // of the scrollbar.
@@ -313,7 +315,9 @@ setNewContent();
 // To compensate for the changes in the content you can
 // call the tinyscrollbar update function
 //
-scrollbar5.tinyscrollbar_update();
+var scrollbar5 = $scrollbar5.data("plugin_tinyscrollbar")
+scrollbar5.update();
+
                     </code></pre>
 
                     <div id="scrollbar6">
@@ -342,11 +346,13 @@ scrollbar5.tinyscrollbar_update();
 
                                 $scrollbar6.tinyscrollbar();
 
+                                var scrollbar6 = $scrollbar6.data("plugin_tinyscrollbar")
+
                                 $(".scrollbar6button").click(function()
                                 {
                                     var anchorPosition = $(this).attr("data-anchor");
 
-                                    $scrollbar6.tinyscrollbar_update(anchorPosition);
+                                    scrollbar6.update(anchorPosition);
 
                                     return false;
                                 });
@@ -359,15 +365,14 @@ $(document).ready(function()
 {
     // You can use the update method to build a anchor.
     //
-    var scrollbar6 = $('#scrollbar6');
-    scrollbar6.tinyscrollbar();
+    var scrollbar6 = $('#scrollbar6').tinyscrollbar();
 
     // Create a anchor that scrolls the bar to 50 pixels
     // when clicked.
     //
     $('.scrollbar6button').click(function()
     {
-        scrollbar6.tinyscrollbar_update(50);
+        scrollbar6.update(50);
 
         return false;
     });
@@ -395,10 +400,10 @@ $(document).ready(function()
                         <li>If your scrollbar + content is on display: none; at page load. Use the update method to enable the scrollbar when its content is visible again.
                     </ul>
 
-                    <h2>Options</h2>
+                    <h2>Initialize options</h2>
                     <p>A list of all the available options and there default value</p>
                     <ul class="list">
-                        <li><strong>axis: 'x'</strong> -- Vertical or horizontal scroller? 'x' or 'y'.</li>
+                        <li><strong>axis: 'y'</strong> -- Vertical or horizontal scroller? 'x' or 'y'.</li>
                         <li><strong>wheelSpeed: 40</strong> -- How many pixels must the mouswheel scrolls at a time.</li>
                         <li><strong>wheel: true</strong> -- Enable or disable the mousewheel.</li>
                         <li><strong>wheelLock: true</strong> -- Return scrollwheel event to browser if there is no more content.</li>
@@ -407,23 +412,64 @@ $(document).ready(function()
                         <li><strong>scrollInvert: false</strong> -- Enable mobile invert style scrolling.</li>
                     </ul>
 
-                    <p>When you remove or add content to your box you can update it on the fly with the update method. You can also use it to create anchors or the enable a scrollbar that was hidden.</p>
+                    <h2>Properties</h2>
+
                     <pre class="prettyprint"><code>
 $(document).ready(function()
 {
-    var $scrollbar = $('#scrollbar1');
-    $scrollbar.tinyscrollbar();
+    // You can access the methods and properties of your
+    // scrollbar instance straight after initialization.
+    //
+    $('#box').tinyscrollbar();
 
-    $scrollbar.tinyscrollbar_update();
+    // This part you can do from whatever place in your
+    // code as long as the scrollbar allready is initialized.
+    //
+    var box = $('#box').data("plugin_tinyscrollbar")
 
-    // Posible parameters you can pass to the method are:
-
-    // tinyscrollbar_update() - default equals to 'top'
-    // tinyscrollbar_update('bottom') - sets scrollbar to the bottom
-    // tinyscrollbar_update('relative') - sets the position of the scrollbar relative to the old content when new content is passed in.
-    // tinyscrollbar_update( a integer ) - You can use this to move to a certain location in the content.
+    // Now you have access to all the methods and properties.
+    //
+    // box.update()
+    // console.log(box.contentPosition)
+    //
+    // etc..
 });
                     </code></pre>
+
+
+                    <ul class="list">
+                        <li><strong>contentPosition</strong> -- Position of the content.</li>
+                        <li><strong>viewportSize</strong> -- Size of the viewport elment.</li>
+                        <li><strong>contentRatio</strong> -- Content size to viewport size ratio.</li>
+                        <li><strong>trackSize</strong> -- Size of the scrollbar track.</li>
+                        <li><strong>trackRatio</strong> -- Track size to thumb size ratio.</li>
+                        <li><strong>thumbSize</strong> -- Size of the scrollbar thumb.</li>
+                        <li><strong>thumbPosition</strong> -- Position of the thumb</li>
+                    </ul>
+
+                    <h2>Methods</h2>
+                    <ul class="list">
+                        <li><strong>update</strong> -- You can use the update method to adjust the scrollbar to new content or to move the scrollbar to a certain point. It takes 1 parameter a number in pixels or the values "relative" or "bottom". If you dont specify a paramater it will default to top.</li>
+                    </ul>
+
+                    <h2>Events</h2>
+                    <pre class="prettyprint"><code>
+$(document).ready(function()
+{
+    var $box = $('#box');
+    var box  = $box.tinyscrollbar();
+
+    $box.bind("move", function()
+    {
+        console.log("do something on every move");
+    });
+});
+                    </code></pre>
+
+
+                    <ul class="list">
+                        <li><strong>move</strong> The move event will trigger on every drag or scroll.</li>
+                    </ul>
 
                 </div>
 

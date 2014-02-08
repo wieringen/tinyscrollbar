@@ -35,11 +35,12 @@ module.exports = ( grunt ) ->
                 ,   { expand: true, cwd: "src", src: "index.html",  dest: "dist/src" }
                 ]
 
-            example :
+            examples :
 
                 files : [
-                    { expand: true, cwd: "src", src: "example/**/*",  dest: "dist/src/" }
-                ,   { expand: true, cwd: "dist/src/js", src: "jquery.<%= pkg.name %>*",  dest: "dist/src/example/js" }
+                    { expand: true, cwd: "src", src: "examples/**/*",  dest: "dist/src/" }
+                ,   { expand: true, cwd: "dist/src/js", src: "jquery.<%= pkg.name %>*",  dest: "dist/src/examples/scrollbarInfinite/js" }
+                ,   { expand: true, cwd: "dist/src/js", src: "jquery.<%= pkg.name %>*",  dest: "dist/src/examples/scrollbarSimple/js" }
                 ]
 
 
@@ -78,6 +79,7 @@ module.exports = ( grunt ) ->
             dist :
                 src : [
                     "dist/src/index.html"
+                    "dist/src/examples/**/*.html"
                 ]
                 overwrite     : true
                 replacements  : [
@@ -87,6 +89,10 @@ module.exports = ( grunt ) ->
                     }
                 ,   {
                         from : /..\/node_modules\/baijs\//ig
+                    ,   to   : ""
+                    }
+                ,   {
+                        from : /..\/..\/js\/js/ig
                     ,   to   : ""
                     }
                 ]
@@ -106,14 +112,14 @@ module.exports = ( grunt ) ->
                 src    : ["**/*"]
                 dest   : "."
 
-            example :
+            examples :
 
                 options :
 
                     archive: "dist/src/<%= pkg.name %>-<%= pkg.version %>.zip"
 
                 expand : true
-                cwd    : "dist/src/example"
+                cwd    : "dist/src/examples"
                 src    : ["**/*"]
                 dest   : "."
 
@@ -152,8 +158,8 @@ module.exports = ( grunt ) ->
             "uglify:dist"
             "compress:dist"
             "replace:dist"
-            "copy:example"
-            "compress:example"
+            "copy:examples"
+            "compress:examples"
         ]
     )
 
