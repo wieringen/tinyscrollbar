@@ -39,8 +39,8 @@ module.exports = ( grunt ) ->
 
                 files : [
                     { expand: true, cwd: "src", src: "examples/**/*",  dest: "dist/src/" }
-                ,   { expand: true, cwd: "dist/src/js", src: "jquery.<%= pkg.name %>*",  dest: "dist/src/examples/scrollbarInfinite/js" }
-                ,   { expand: true, cwd: "dist/src/js", src: "jquery.<%= pkg.name %>*",  dest: "dist/src/examples/scrollbarSimple/js" }
+                ,   { expand: true, cwd: "dist/src/js", src: "jquery.<%= pkg.name %>*",  dest: "dist/src/examples/infinite/js" }
+                ,   { expand: true, cwd: "dist/src/js", src: "jquery.<%= pkg.name %>*",  dest: "dist/src/examples/simple/js" }
                 ]
 
 
