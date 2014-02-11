@@ -365,7 +365,10 @@ $(document).ready(function()
 {
     // You can use the update method to build a anchor.
     //
-    var scrollbar6 = $('#scrollbar6').tinyscrollbar();
+    var $scrollbar6 = $('#scrollbar6');
+    $scrollbar6.tinyscrollbar();
+
+    var scrollbar6 = $scrollbar6.data("plugin_tinyscrollbar");
 
     // Create a anchor that scrolls the bar to 50 pixels
     // when clicked.
