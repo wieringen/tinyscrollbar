@@ -6,12 +6,19 @@
     <title>Tiny Scrollbar: A lightweight jQuery plugin</title>
     <link rel="stylesheet" href="css/website.css" type="text/css" media="screen"/>
 
-    <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script>
-    <script type="text/javascript" src="../../js/jquery.tinyscrollbar.js"></script>
+    <script type="text/javascript" src="../../js/tinyscrollbar.js"></script>
     <script type="text/javascript">
-        $(document).ready(function(){
-            $('#scrollbar1').tinyscrollbar();
-        });
+        window.onload = function()
+        {
+            var $scrollbar = document.getElementById("scrollbar1")
+            ,   scrollbar  = tinyscrollbar($scrollbar)
+            ;
+
+            $scrollbar.addEventListener("move", function()
+            {
+                console.log(scrollbar.contentPosition);
+            }, false);
+        }
     </script>
 
 </head>
@@ -34,5 +41,6 @@
             </div>
         </div>
     </div>
+
 </body>
 </html>

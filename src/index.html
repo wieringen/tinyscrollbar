@@ -1,12 +1,12 @@
 <!doctype html>
 <html lang="en">
     <head>
-        <title>Tiny Scrollbar: A lightweight jQuery plugin</title>
+        <title>Tiny Scrollbar: A lightweight javascript microlib and jQuery plugin scrollbar.</title>
 
         <meta charset="utf-8">
         <meta name="robots" content="all" />
-        <meta name="description" content="Tiny Scrollbar is a lightweight jQuery based scrollbar." />
-        <meta name="keywords" content="lightweight, jQuery, plugin, scrollbar, javascript, tinyscrollbar, Tiny Scrollbar, web 2.0" />
+        <meta name="description" content="Tiny Scrollbar is a lightweight scrollbar." />
+        <meta name="keywords" content="lightweight, jQuery, plugin, scrollbar, plain javascript, microlib, vanilla javascript, tinyscrollbar, Tiny Scrollbar, web 2.0" />
         <meta name="author" content="Maarten baijs" />
         <meta name="copyright" content="Maarten Baijs 2007-2012 // All rights reserved, all graphics copyrighted." />
 
@@ -50,7 +50,7 @@
                 <span class="slogan">A lightweight cross browser javascript scrollbar.</span>
 
                 <div class="block-download">
-                    <a href="tinyscrollbar-@@bnr@@.zip" onclick="pageTracker._trackEvent('Download', 'min', 'Tiny Carousel min download');" class="download">Download v@@bnr@@</a>
+                    <a href="tinyscrollbar-@@bnr@@.zip" class="download">Download v@@bnr@@</a>
                 </div>
 
             </header>
@@ -63,7 +63,10 @@
                     <div class="block">
                         <!-- google_ad_section_start -->
                         <h2>What is it?</h2>
-                        <p>Tiny Scrollbar is a nice and elegant way to enable the scrolling of content on mobile and desktop devices. The plugin uses the javascript jQuery library. Tiny scrollbar was designed to be a dynamic lightweight utility that gives a webdesigner a powerfull way of enhancing a websites user interface. A basic example and a little more advanced infinite scroll example are included in the download. </p>
+                        <p>Tiny Scrollbar is a nice and elegant way to enable the scrolling of content on mobile and desktop devices. Its designed to be a dynamic lightweight utility. Furthermore it gives a User Interface Designer a powerful way of enhancing the Ui (user interface) of a website.</p>
+                        <p>It comes in 2 flavors as a vanilla Javascript microlib and a jQuery plugin. The jQuery plugin does not need any other external libaries like jQuery Ui.
+                        </p>
+                        <p>The jQuery version supports all modern browsers and Internet Explorer 6 and up. The plain Javascript version supports all modern browsers and Internet Explorer 9 and up.
                         <!-- google_ad_section_end -->
 
                         <!-- AddThis Button BEGIN -->
@@ -72,7 +75,6 @@
                             <a class="addthis_button_twitter"></a>
                             <a class="addthis_button_delicious"></a>
                         </div>
-                        <script type="text/javascript">var addthis_config = {"data_track_addressbar":true};</script>
                         <script type="text/javascript" src="//s7.addthis.com/js/300/addthis_widget.js#pubid=ra-52f90afd62b4f6ee"></script>
                         <!-- AddThis Button END -->
                     </div>
@@ -82,24 +84,24 @@
                         <ul class="list">
                             <li><strong>Completely rewritten!</strong></li>
                             <li><strong>IOS and Android support.</strong></li>
+                            <li><strong>Available as a jQuery plugin and as a vanilla Javascript microlib.</strong></li>
                             <li>AMD, Node, requirejs and commonjs support.</li>
                             <li>Can scroll vertical or horizontal</li>
                             <li>Supports scrolling by wheel, thumb, track or touch.</li>
-                            <li>It has a update function so it can handle content changes and async requests.</li>
-                            <li>Size of the scrollbar track and thumb can be set to auto or a fixed number </li>
+                            <li>It has a update function so it can handle (async) content changes.</li>
+                            <li>Size of the track and thumb can be set to auto or a fixed number </li>
                             <li>Easy customizable</li>
                             <li>Supports normal scrolling and mobile style invert scrolling.</li>
+                            <li>Examples can be seen on this page, by downloading the zip or <a href="examples">here</a></li>
                             <li>Lightweight</li>
                             <li><a href="https://github.com/wieringen/tinyscrollbar">Source is on GitHub</a></li>
                         </ul>
                     </div>
 
-                    <div class="block">
-                        <h2>Need support or custom features?</h2>
-                        <p>Anything is possible! For a small fee i can help you implement the script in your project. Missing any features? I can build them for you!! <span id="mcon"></span></p>
-                    </div>
-
                     <h2>Examples</h2>
+
+                    <p>The examples below are all for the jQuery Plugin. If you need some more (advanced) examples you can find them <a href="examples">here</a>. You can also find a example for the plain javascript library there.</p>
+
                     <div id="scrollbar1">
                         <div class="scrollbar"><div class="track"><div class="thumb"><div class="end"></div></div></div></div>
                         <div class="viewport">
@@ -397,10 +399,10 @@ $(document).ready(function()
 
                     <h2>FAQ</h2>
                     <ul class="list">
-                        <li>The thumb is slightly larger then the background image. This is for easier scrolling on mobile devices.</li>
-                        <li>When your missing part of you content in the scrollbar. Please make sure all the images have a height and width defined.</li>
-                        <li>Use the update method on content changes! Its your friend ;)</li>
-                        <li>If your scrollbar + content is on display: none; at page load. Use the update method to enable the scrollbar when its content is visible again.
+                        <li>The thumb is slightly larger then the background image this is for easier scrolling on mobile devices.</li>
+                        <li>When you seem to be missing part of the content. Please make sure all the images have a height and width defined.</li>
+                        <li>Use the update method on content changes! It's your friend ;)</li>
+                        <li>If your scrollbar + content is on display: none; at page load. Use the update method to enable the scrollbar when its content is visible again.</li>
                     </ul>
 
                     <h2>Initialize options</h2>
@@ -511,6 +513,12 @@ $(document).ready(function()
                         <img alt="" src="https://www.paypal.com/nl_NL/i/scr/pixel.gif" width="1" height="1" />
                     </form></p>
                     <p>The latest source is available on <a href="https://github.com/wieringen/tinyscrollbar">GitHub</a>.</p>
+
+                </div>
+
+                <div class="block">
+                    <h2>Support</h2>
+                    <p> For a small fee I can help you implement the script in your project. Missing any features? I can build them for you <span id="mcon"></span></p>
                 </div>
 
             </section>

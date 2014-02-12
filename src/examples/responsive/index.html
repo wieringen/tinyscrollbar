@@ -9,8 +9,18 @@
     <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script>
     <script type="text/javascript" src="../../js/jquery.tinyscrollbar.js"></script>
     <script type="text/javascript">
-        $(document).ready(function(){
-            $('#scrollbar1').tinyscrollbar();
+        $(document).ready(function()
+        {
+            var $scrollbar = $("#scrollbar1");
+
+            $scrollbar.tinyscrollbar();
+
+            var scrollbar = $scrollbar.data("plugin_tinyscrollbar");
+
+            $(window).resize(function()
+            {
+                scrollbar.update("relative");
+            });
         });
     </script>
 

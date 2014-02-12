@@ -41,6 +41,8 @@ module.exports = ( grunt ) ->
                     { expand: true, cwd: "src", src: "examples/**/*",  dest: "dist/src/" }
                 ,   { expand: true, cwd: "dist/src/js", src: "jquery.<%= pkg.name %>*",  dest: "dist/src/examples/infinite/js" }
                 ,   { expand: true, cwd: "dist/src/js", src: "jquery.<%= pkg.name %>*",  dest: "dist/src/examples/simple/js" }
+                ,   { expand: true, cwd: "dist/src/js", src: "jquery.<%= pkg.name %>*",  dest: "dist/src/examples/responsive/js" }
+                ,   { expand: true, cwd: "dist/src/js", src: "<%= pkg.name %>*",  dest: "dist/src/examples/nojquery/js" }
                 ]
 
 
@@ -54,6 +56,7 @@ module.exports = ( grunt ) ->
 
             all : [
                 "src/js/jquery.<%= pkg.name %>.js"
+            ,   "src/js/<%= pkg.name %>.js"
             ]
 
         #  Minify the javascript.
@@ -70,6 +73,7 @@ module.exports = ( grunt ) ->
                 files :
 
                         "dist/src/js/jquery.<%= pkg.name %>.min.js" : ["dist/src/js/jquery.<%= pkg.name %>.js"]
+                        "dist/src/js/<%= pkg.name %>.min.js" : ["dist/src/js/<%= pkg.name %>.js"]
 
 
         #  Replace image file paths in css and correct css path in the index.

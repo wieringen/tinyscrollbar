@@ -1,20 +1,21 @@
-;(function (factory)
+;(function(window, undefined)
 {
-    if (typeof define === 'function' && define.amd)
+    "use strict";
+
+    function extend()
     {
-        // AMD. Register as an anonymous module.
-        define(['jquery'], factory);
-    } else if (typeof exports === 'object')
-    {
-        // Node/CommonJS
-        factory(require('jquery'));
-    } else
-    {
-        // Browser globals
-        factory(jQuery);
+        for(var i=1; i < arguments.length; i++)
+        {
+            for(var key in arguments[i])
+            {
+                if(arguments[i].hasOwnProperty(key))
+                {
+                    arguments[0][key] = arguments[i][key];
+                }
+            }
+        }
+        return arguments[0];
     }
-}(function ($)
-{
 
     var pluginName = "tinyscrollbar"
     ,   defaults   =
@@ -31,25 +32,28 @@
 
     function Plugin($container, options)
     {
-        this.options   = $.extend({}, defaults, options);
+        this.options   = extend({}, defaults, options);
         this._defaults = defaults;
         this._name     = pluginName;
 
         var self        = this
-        ,   $viewport   = $container.find(".viewport")
-        ,   $overview   = $container.find(".overview")
-        ,   $scrollbar  = $container.find(".scrollbar")
-        ,   $track      = $scrollbar.find(".track")
-        ,   $thumb      = $scrollbar.find(".thumb")
+        ,   $body       = document.querySelectorAll("body")[0]
+        ,   $viewport   = $container.querySelectorAll(".viewport")[0]
+        ,   $overview   = $container.querySelectorAll(".overview")[0]
+        ,   $scrollbar  = $container.querySelectorAll(".scrollbar")[0]
+        ,   $track      = $scrollbar.querySelectorAll(".track")[0]
+        ,   $thumb      = $scrollbar.querySelectorAll(".thumb")[0]
 
-        ,   mousePosition   = 0
-
+        ,   mousePosition  = 0
         ,   isHorizontal   = this.options.axis === 'x'
         ,   hasTouchEvents = "ontouchstart" in document.documentElement
 
         ,   sizeLabel = isHorizontal ? "width" : "height"
         ,   posiLabel = isHorizontal ? "left" : "top"
+        ,   moveEvent = document.createEvent("HTMLEvents")
         ;
+
+        moveEvent.initEvent("move", true, true);
 
         this.contentPosition = 0;
         this.viewportSize    = 0;
@@ -71,14 +75,15 @@
         this.update = function(scrollTo)
         {
             var sizeLabelCap  = sizeLabel.charAt(0).toUpperCase() + sizeLabel.slice(1).toLowerCase();
-            this.viewportSize = $viewport[0]['offset'+ sizeLabelCap];
-            this.contentSize  = $overview[0]['scroll'+ sizeLabelCap];
+            this.viewportSize = $viewport['offset'+ sizeLabelCap];
+            this.contentSize  = $overview['scroll'+ sizeLabelCap];
             this.contentRatio = this.viewportSize / this.contentSize;
             this.trackSize    = this.options.trackSize || this.viewportSize;
             this.thumbSize    = Math.min(this.trackSize, Math.max(0, (this.options.thumbSize || (this.trackSize * this.contentRatio))));
             this.trackRatio   = this.options.thumbSize ? (this.contentSize - this.viewportSize) / (this.trackSize - this.thumbSize) : (this.contentSize / this.trackSize);
 
-            $scrollbar.toggleClass("disable", this.contentRatio >= 1);
+            var scrcls = $scrollbar.className;
+            $scrollbar.className = this.contentRatio >= 1 ? scrcls + " disable" : scrcls.replace(" disable", "");
 
             switch (scrollTo)
             {
@@ -99,18 +104,18 @@
 
         function setSize()
         {
-            $thumb.css(posiLabel, self.contentPosition / self.trackRatio);
-            $overview.css(posiLabel, -self.contentPosition);
-            $scrollbar.css(sizeLabel, self.trackSize);
-            $track.css(sizeLabel, self.trackSize);
-            $thumb.css(sizeLabel, self.thumbSize);
+            $thumb.style[posiLabel] = self.contentPosition / self.trackRatio + "px";
+            $overview.style[posiLabel] = -self.contentPosition + "px";
+            $scrollbar.style[sizeLabel] = self.trackSize + "px";
+            $track.style[sizeLabel] = self.trackSize + "px";
+            $thumb.style[sizeLabel] = self.thumbSize + "px";
         }
 
         function setEvents()
         {
             if(hasTouchEvents)
             {
-                $viewport[0].ontouchstart = function(event)
+                $viewport.ontouchstart = function(event)
                 {
                     if(1 === event.touches.length)
                     {
@@ -121,27 +126,26 @@
             }
             else
             {
-                $thumb.bind("mousedown", start);
-                $track.bind("mouseup", drag);
+                $thumb.onmousedown = start;
+                $track.onmouseup = drag;
             }
 
             if(self.options.wheel && window.addEventListener)
             {
-                $container[0].addEventListener("DOMMouseScroll", wheel, false );
-                $container[0].addEventListener("mousewheel", wheel, false );
+                $container.addEventListener("DOMMouseScroll", wheel, false );
+                $container.addEventListener("mousewheel", wheel, false );
             }
             else if(self.options.wheel)
             {
-                $container[0].onmousewheel = wheel;
+                $container.onmousewheel = wheel;
             }
         }
 
         function start(event)
         {
-            $("body").addClass("noSelect");
-
+            $body.className   += $body.className + " noSelect";
             mousePosition      = isHorizontal ? event.pageX : event.pageY;
-            self.thumbPosition = parseInt($thumb.css(posiLabel), 10) || 0;
+            self.thumbPosition = parseInt($thumb.style[posiLabel], 10) || 0;
 
             if(hasTouchEvents)
             {
@@ -154,9 +158,8 @@
             }
             else
             {
-                $(document).bind("mousemove", drag);
-                $(document).bind("mouseup", end);
-                $thumb.bind("mouseup", end);
+                document.onmousemove = drag;
+                document.onmouseup = $thumb.onmouseup = end;
             }
         }
 
@@ -171,14 +174,13 @@
                 self.contentPosition -= wheelSpeedDelta * self.options.wheelSpeed;
                 self.contentPosition = Math.min((self.contentSize - self.viewportSize), Math.max(0, self.contentPosition));
 
-                $container.trigger("move");
+                $container.dispatchEvent(moveEvent);
 
-                $thumb.css(posiLabel, self.contentPosition / self.trackRatio);
-                $overview.css(posiLabel, -self.contentPosition);
+                $thumb.style[posiLabel]    = self.contentPosition / self.trackRatio + "px";
+                $overview.style[posiLabel] = -self.contentPosition + "px";
 
                 if(self.options.wheelLock || (self.contentPosition !== (self.contentSize - self.viewportSize) && self.contentPosition !== 0))
                 {
-                    eventObject = $.event.fix(eventObject);
                     eventObject.preventDefault();
                 }
             }
@@ -200,33 +202,39 @@
                 var thumbPositionNew = Math.min((self.trackSize - self.thumbSize), Math.max(0, self.thumbPosition + thumbPositionDelta));
                 self.contentPosition = thumbPositionNew * self.trackRatio;
 
-                $container.trigger("move");
+                $container.dispatchEvent(moveEvent);
 
-                $thumb.css(posiLabel, thumbPositionNew);
-                $overview.css(posiLabel, -self.contentPosition);
+                $thumb.style[posiLabel] = thumbPositionNew + "px";
+                $overview.style[posiLabel] = -self.contentPosition + "px";
             }
         }
 
         function end()
         {
-            $("body").removeClass("noSelect");
-            $(document).unbind("mousemove", drag);
-            $(document).unbind("mouseup", end);
-            $thumb.unbind("mouseup", end);
+            $body.className = $body.className.replace(" noSelect", "");
+            document.onmousemove = document.onmouseup = null;
+            $thumb.onmouseup = null;
             document.ontouchmove = document.ontouchend = null;
         }
 
         return initialize();
     }
 
-    $.fn[pluginName] = function(options)
+    var tinyscrollbar = function($container, options)
     {
-        return this.each(function()
-        {
-            if(!$.data(this, "plugin_" + pluginName))
-            {
-                $.data(this, "plugin_" + pluginName, new Plugin($(this), options));
-            }
-        });
+        return new Plugin($container, options);
     };
-}));
+
+    if(typeof define == 'function' && define.amd)
+    {
+        define(function(){ return tinyscrollbar; });
+    }
+    else if(typeof module === 'object' && module.exports)
+    {
+        module.exports = tinyscrollbar;
+    }
+    else
+    {
+        window.tinyscrollbar = tinyscrollbar;
+    }
+})(window);
