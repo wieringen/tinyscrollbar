@@ -1,66 +1,67 @@
 <!doctype html>
-<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
+<html lang="en">
+    <head>
+        <title>Tiny Scrollbar: A crossbrowser lightweight javascript/jQuery scrollbar.</title>
 
-<head>
-    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-    <title>Tiny Scrollbar: A lightweight jQuery plugin</title>
+        <meta charset="utf-8">
+        <meta name="description" content="A crossbrowser lightweight javascript/jQuery scrollbar." />
 
-    <link rel="stylesheet" href="css/website.css" type="text/css" media="screen"/>
+        <link rel="stylesheet" href="css/website.css" type="text/css" media="screen"/>
 
-    <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script>
-    <script type="text/javascript" src="../../js/jquery.tinyscrollbar.js"></script>
-    <script type="text/javascript">
-        $(document).ready(function()
-        {
-            var $scrollbar  = $('#scrollbar1')
-            ,   $overview   = $scrollbar.find(".overview")
-            ,   loadingData = false
-            ;
-
-            $scrollbar.tinyscrollbar({thumbSize : 20});
-
-            var scrollbarData = $scrollbar.data("plugin_tinyscrollbar")
-
-            $scrollbar.bind("move", function()
+        <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script>
+        <script type="text/javascript" src="../../js/jquery.tinyscrollbar.js"></script>
+        <script type="text/javascript">
+            $(document).ready(function()
             {
-                // The threshold will enable us to start loading the text before we reach the end.
-                //
-                var threshold       = 0.9
-                ,   positionCurrent = scrollbarData.contentPosition + scrollbarData.viewportSize
-                ,   positionEnd     = scrollbarData.contentSize * threshold
+                var $scrollbar  = $('#scrollbar1')
+                ,   $overview   = $scrollbar.find(".overview")
+                ,   loadingData = false
                 ;
 
-                // Check if have reached the "end" and that we arent allready in the process of loading new data.
-                //
-                if(!loadingData && positionCurrent >= positionEnd)
+                $scrollbar.tinyscrollbar({thumbSize : 20});
+
+                var scrollbarData = $scrollbar.data("plugin_tinyscrollbar")
+
+                $scrollbar.bind("move", function()
                 {
-                    loadingData = true;
+                    // The threshold will enable us to start loading the text before we reach the end.
+                    //
+                    var threshold       = 0.9
+                    ,   positionCurrent = scrollbarData.contentPosition + scrollbarData.viewportSize
+                    ,   positionEnd     = scrollbarData.contentSize * threshold
+                    ;
 
-                    $.getJSON("json/data.json", function(data)
+                    // Check if have reached the "end" and that we arent allready in the process of loading new data.
+                    //
+                    if(!loadingData && positionCurrent >= positionEnd)
                     {
-                        loadingData = false;
+                        loadingData = true;
 
-                        $overview.append(data.text)
+                        $.getJSON("json/data.json", function(data)
+                        {
+                            loadingData = false;
 
-                        scrollbarData.update("relative");
-                    });
-                }
+                            $overview.append(data.text)
+
+                            scrollbarData.update("relative");
+                        });
+                    }
+                });
             });
-        });
-    </script>
+        </script>
 
-</head>
-<body>
-    <div id="scrollbar1">
-        <div class="scrollbar"><div class="track"><div class="thumb"><div class="end"></div></div></div></div>
-        <div class="viewport">
-             <div class="overview">
-                <h3>Magnis dis parturient montes</h3>
-                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut vitae velit at velit pretium sodales. Maecenas egestas imperdiet mauris, vel elementum turpis iaculis eu. Duis egestas augue quis ante ornare eu tincidunt magna interdum. Vestibulum posuere risus non ipsum sollicitudin quis viverra ante feugiat. Pellentesque non faucibus lorem. Nunc tincidunt diam nec risus ornare quis porttitor enim pretium. Ut adipiscing tempor massa, a ullamcorper massa bibendum at. Suspendisse potenti. In vestibulum enim orci, nec consequat turpis. Suspendisse sit amet tellus a quam volutpat porta. Mauris ornare augue ut diam tincidunt elementum. Vivamus commodo dapibus est, a gravida lorem pharetra eu. Maecenas ultrices cursus tellus sed congue. Cras nec nulla erat.</p>
+    </head>
+    <body>
+        <div id="scrollbar1">
+            <div class="scrollbar"><div class="track"><div class="thumb"><div class="end"></div></div></div></div>
+            <div class="viewport">
+                 <div class="overview">
+                    <h3>Magnis dis parturient montes</h3>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut vitae velit at velit pretium sodales. Maecenas egestas imperdiet mauris, vel elementum turpis iaculis eu. Duis egestas augue quis ante ornare eu tincidunt magna interdum. Vestibulum posuere risus non ipsum sollicitudin quis viverra ante feugiat. Pellentesque non faucibus lorem. Nunc tincidunt diam nec risus ornare quis porttitor enim pretium. Ut adipiscing tempor massa, a ullamcorper massa bibendum at. Suspendisse potenti. In vestibulum enim orci, nec consequat turpis. Suspendisse sit amet tellus a quam volutpat porta. Mauris ornare augue ut diam tincidunt elementum. Vivamus commodo dapibus est, a gravida lorem pharetra eu. Maecenas ultrices cursus tellus sed congue. Cras nec nulla erat.</p>
 
-                <p>Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Pellentesque eget mauris libero. Nulla sit amet felis in sem posuere laoreet ut quis elit. Aenean mauris massa, pretium non bibendum eget, elementum sed nibh. Nulla ac felis et purus adipiscing rutrum. Pellentesque a bibendum sapien. Vivamus erat quam, gravida sed ultricies ac, scelerisque sed velit. Integer mollis urna sit amet ligula aliquam ac sodales arcu euismod. Fusce fermentum augue in nulla cursus non fermentum lorem semper. Quisque eu auctor lacus. Donec justo justo, mollis vel tempor vitae, consequat eget velit.</p>
+                    <p>Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Pellentesque eget mauris libero. Nulla sit amet felis in sem posuere laoreet ut quis elit. Aenean mauris massa, pretium non bibendum eget, elementum sed nibh. Nulla ac felis et purus adipiscing rutrum. Pellentesque a bibendum sapien. Vivamus erat quam, gravida sed ultricies ac, scelerisque sed velit. Integer mollis urna sit amet ligula aliquam ac sodales arcu euismod. Fusce fermentum augue in nulla cursus non fermentum lorem semper. Quisque eu auctor lacus. Donec justo justo, mollis vel tempor vitae, consequat eget velit.</p>
+                </div>
             </div>
         </div>
-    </div>
-</body>
+    </body>
 </html>
