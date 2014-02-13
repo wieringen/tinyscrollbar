@@ -5,7 +5,7 @@ Environments in which to use tinyscrollbar
 --------------------------------------
 
 - Browser support differs between the jQuery plugin and the plain Javascript microlib. Specifically, the plain Javascript microlib does not support legacy browsers such as IE6-8. Use the jQuery plugin release if support for those browsers is required.
-- Tinyscrollbar can be used in Node, browser extensions, and other non-browser environments.
+- Tinyscrollbar can also be used in Node, browser extensions, and other non-browser environments.
 
 What you need to build your own version of tinyscrollbar
 --------------------------------------

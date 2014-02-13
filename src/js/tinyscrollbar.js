@@ -143,7 +143,7 @@
 
         function start(event)
         {
-            $body.className   += $body.className + " noSelect";
+            $body.className   += " noSelect";
             mousePosition      = isHorizontal ? event.pageX : event.pageY;
             self.thumbPosition = parseInt($thumb.style[posiLabel], 10) || 0;
 
