@@ -23,7 +23,7 @@ module.exports = ( grunt ) ->
 
             dist :
 
-                src : ["<%= PRO_PATH %>"]
+                src : ["dist"]
 
         #  Copy the images and the index to the dist location.
         #
@@ -44,10 +44,10 @@ module.exports = ( grunt ) ->
 
                 files : [
                     { expand: true, cwd: "<%= DEV_PATH %>", src: "examples/**/*",              dest: "<%= PRO_PATH %>" }
-                    { expand: true, cwd: "<%= DEV_PATH %>", src: "js/jquery.<%= pkg.name %>*", dest: "<%= PRO_PATH %>/examples/infinite/js" }
-                    { expand: true, cwd: "<%= DEV_PATH %>", src: "js/jquery.<%= pkg.name %>*", dest: "<%= PRO_PATH %>/examples/simple/js" }
-                    { expand: true, cwd: "<%= DEV_PATH %>", src: "js/jquery.<%= pkg.name %>*", dest: "<%= PRO_PATH %>/examples/responsive/js" }
-                    { expand: true, cwd: "<%= DEV_PATH %>", src: "js/<%= pkg.name %>*",        dest: "<%= PRO_PATH %>/examples/nojquery/js" }
+                    { expand: true, cwd: "<%= DEV_PATH %>", src: "js/jquery.<%= pkg.name %>*", dest: "<%= PRO_PATH %>/examples/infinite" }
+                    { expand: true, cwd: "<%= DEV_PATH %>", src: "js/jquery.<%= pkg.name %>*", dest: "<%= PRO_PATH %>/examples/simple" }
+                    { expand: true, cwd: "<%= DEV_PATH %>", src: "js/jquery.<%= pkg.name %>*", dest: "<%= PRO_PATH %>/examples/responsive" }
+                    { expand: true, cwd: "<%= DEV_PATH %>", src: "js/<%= pkg.name %>*",        dest: "<%= PRO_PATH %>/examples/nojquery" }
                 ]
 
         #  Validate javascript files with jsHint.
@@ -101,8 +101,8 @@ module.exports = ( grunt ) ->
                         to   : ""
                     }
                     {
-                        from : /..\/..\/js\/js/ig
-                        to   : ""
+                        from : /..\/..\/js\//ig
+                        to   : "js/"
                     }
                 ]
 
@@ -166,9 +166,9 @@ module.exports = ( grunt ) ->
             "clean:dist"
             "copy:dist"
             "uglify:dist"
-            "compress:dist"
-            "replace:dist"
             "copy:examples"
+            "replace:dist"
+            "compress:dist"
             "compress:examples"
         ]
     )

@@ -192,7 +192,7 @@
                 ,   thumbPositionDelta = mousePositionNew - mousePosition
                 ;
 
-                if(self.options.scrollInvert)
+                if(self.options.scrollInvert || hasTouchEvents)
                 {
                     thumbPositionDelta = mousePosition - mousePositionNew;
                 }
