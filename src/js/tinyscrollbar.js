@@ -24,7 +24,7 @@
         ,   wheel          : true          // enable or disable the mousewheel;
         ,   wheelSpeed     : 40            // how many pixels must the mouswheel scroll at a time.
         ,   wheelLock      : true          // return mouswheel to browser if there is no more content.
-        ,   scrollInvert   : false         // Enable invert style scrolling
+        ,   scrollInvert   : false         // Inverts the direction of scrolling
         ,   trackSize      : false         // set the size of the scrollbar to auto or a fixed number.
         ,   thumbSize      : false         // set the size of the thumb to auto or a fixed number.
         }
@@ -194,7 +194,7 @@
                 ,   thumbPositionDelta = mousePositionNew - mousePosition
                 ;
 
-                if(self.options.scrollInvert || hasTouchEvents)
+                if(self.options.scrollInvert && hasTouchEvents)
                 {
                     thumbPositionDelta = mousePosition - mousePositionNew;
                 }
