@@ -35,6 +35,11 @@
         this._defaults = defaults;
         this._name     = pluginName;
 
+        $container
+            .wrapInner('<div class="viewport"><div class="overview"></div></div></div>')
+            .prepend('<div class="scrollbar"><div class="track"><div class="thumb"><div class="end"></div></div></div></div>')
+            ;
+
         var self        = this
         ,   $viewport   = $container.find(".viewport")
         ,   $overview   = $container.find(".overview")
