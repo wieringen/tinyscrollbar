@@ -122,7 +122,7 @@
             else
             {
                 $thumb.bind("mousedown", start);
-                $track.bind("mouseup", drag);
+                $track.bind("mousedown", drag);
             }
 
             if(self.options.wheel && window.addEventListener)
@@ -192,7 +192,7 @@
                 ,   thumbPositionDelta = mousePositionNew - mousePosition
                 ;
 
-                if(self.options.scrollInvert || hasTouchEvents)
+                if(self.options.scrollInvert && hasTouchEvents)
                 {
                     thumbPositionDelta = mousePosition - mousePositionNew;
                 }

@@ -127,7 +127,7 @@
             else
             {
                 $thumb.onmousedown = start;
-                $track.onmouseup = drag;
+                $track.onmousedown = drag;
             }
 
             if(self.options.wheel && window.addEventListener)
