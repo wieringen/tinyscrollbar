@@ -2,11 +2,6 @@ module.exports = ( grunt ) ->
 
     grunt.initConfig
 
-        #  Path constants
-        #
-        PRO_PATH : "dist/src"
-        DEV_PATH : "src"
-
         pkg : grunt.file.readJSON "package.json"
 
         #  Banner we want to show above the minified js files.
@@ -29,25 +24,26 @@ module.exports = ( grunt ) ->
         #
         copy :
 
-            dist :
+            docs :
 
                 files : [
-                    { expand: true, cwd: "<%= DEV_PATH %>",    src: "images/**/*", dest: "<%= PRO_PATH %>" }
-                    { expand: true, cwd: "<%= DEV_PATH %>",    src: "css/**/*",    dest: "<%= PRO_PATH %>" }
-                    { expand: true, cwd: "node_modules/baijs", src: "css/**/*",    dest: "<%= PRO_PATH %>" }
-                    { expand: true, cwd: "node_modules/baijs", src: "js/**/*",     dest: "<%= PRO_PATH %>" }
-                    { expand: true, cwd: "<%= DEV_PATH %>",    src: "js/**/*",     dest: "<%= PRO_PATH %>" }
-                    { expand: true, cwd: "<%= DEV_PATH %>",    src: "index.html",  dest: "<%= PRO_PATH %>" }
+                    { expand: true, cwd: "docs", src: "images/**/*", dest: "dist/docs" }
+                    { expand: true, cwd: "docs", src: "css/**/*",    dest: "dist/docs" }
+                    { expand: true, cwd: "node_modules/baijs", src: "css/**/*",    dest: "dist/docs" }
+                    { expand: true, cwd: "node_modules/baijs", src: "js/**/*",     dest: "dist/docs" }
+                    { expand: true, cwd: "docs", src: "js/**/*",     dest: "dist/docs" }
+                    { expand: true, cwd: "lib",  src: "**/*",        dest: "dist/docs/js" }
+                    { expand: true, cwd: "docs", src: "index.html",  dest: "dist/docs" }
                 ]
 
             examples :
 
                 files : [
-                    { expand: true, cwd: "<%= DEV_PATH %>", src: "examples/**/*",              dest: "<%= PRO_PATH %>" }
-                    { expand: true, cwd: "<%= DEV_PATH %>", src: "js/jquery.<%= pkg.name %>*", dest: "<%= PRO_PATH %>/examples/infinite" }
-                    { expand: true, cwd: "<%= DEV_PATH %>", src: "js/jquery.<%= pkg.name %>*", dest: "<%= PRO_PATH %>/examples/simple" }
-                    { expand: true, cwd: "<%= DEV_PATH %>", src: "js/jquery.<%= pkg.name %>*", dest: "<%= PRO_PATH %>/examples/responsive" }
-                    { expand: true, cwd: "<%= DEV_PATH %>", src: "js/<%= pkg.name %>*",        dest: "<%= PRO_PATH %>/examples/nojquery" }
+                    { expand: true, cwd: "examples", src: "**/*",                     dest: "dist/examples" }
+                    { expand: true, cwd: "lib", src: "jquery.<%= pkg.name %>.min.js", dest: "dist/examples/infinite" }
+                    { expand: true, cwd: "lib", src: "jquery.<%= pkg.name %>.min.js", dest: "dist/examples/simple" }
+                    { expand: true, cwd: "lib", src: "jquery.<%= pkg.name %>.min.js", dest: "dist/examples/responsive" }
+                    { expand: true, cwd: "lib", src: "<%= pkg.name %>.min.js",        dest: "dist/examples/nojquery" }
                 ]
 
         #  Validate javascript files with jsHint.
@@ -59,15 +55,15 @@ module.exports = ( grunt ) ->
                 jshintrc : ".jshintrc"
 
             all : [
-                "<%= DEV_PATH %>/js/jquery.<%= pkg.name %>.js"
-                "<%= DEV_PATH %>/js/<%= pkg.name %>.js"
+                "lib/jquery.<%= pkg.name %>.js"
+                "lib/<%= pkg.name %>.js"
             ]
 
         #  Minify the javascript.
         #
         uglify :
 
-            dist :
+            lib :
 
                 options :
 
@@ -76,9 +72,8 @@ module.exports = ( grunt ) ->
 
                 files :
 
-                    "<%= PRO_PATH %>/js/jquery.<%= pkg.name %>.min.js" : ["<%= PRO_PATH %>/js/jquery.<%= pkg.name %>.js"]
-                    "<%= PRO_PATH %>/js/<%= pkg.name %>.min.js"        : ["<%= PRO_PATH %>/js/<%= pkg.name %>.js"]
-
+                    "lib/jquery.<%= pkg.name %>.min.js" : ["lib/jquery.<%= pkg.name %>.js"]
+                    "lib/<%= pkg.name %>.min.js"        : ["lib/<%= pkg.name %>.js"]
 
         #  Replace image file paths in css and correct css path in the index.
         #
@@ -87,8 +82,8 @@ module.exports = ( grunt ) ->
             dist :
 
                 src : [
-                    "<%= PRO_PATH %>/index.html"
-                    "<%= PRO_PATH %>/examples/**/*.html"
+                    "dist/docs/index.html"
+                    "dist/examples/**/*.html"
                 ]
                 overwrite     : true
                 replacements  : [
@@ -101,23 +96,28 @@ module.exports = ( grunt ) ->
                         to   : ""
                     }
                     {
-                        from : /..\/..\/js\//ig
+                        from : /..\/..\/lib\//ig
+                        to   : ""
+                    }
+                    {
+                        from : /..\/lib\//ig
                         to   : "js/"
                     }
+
                 ]
 
         #  Make a zipfile from the dist and examples.
         #
         compress :
 
-            dist :
+            docs :
 
                 options :
 
-                    archive: "dist/dist-<%= pkg.version %>.zip"
+                    archive: "dist/<%= pkg.name %>-<%= pkg.version %>-docs.zip"
 
                 expand : true
-                cwd    : "<%= PRO_PATH %>"
+                cwd    : "dist/docs"
                 src    : ["**/*"]
                 dest   : "."
 
@@ -125,10 +125,10 @@ module.exports = ( grunt ) ->
 
                 options :
 
-                    archive: "<%= PRO_PATH %>/<%= pkg.name %>-<%= pkg.version %>.zip"
+                    archive: "dist/<%= pkg.name %>-<%= pkg.version %>.zip"
 
                 expand : true
-                cwd    : "<%= PRO_PATH %>/examples"
+                cwd    : "dist/examples"
                 src    : ["**/*"]
                 dest   : "."
 
@@ -136,16 +136,14 @@ module.exports = ( grunt ) ->
         #
         "ftp-deploy" :
 
-            dist :
+            auth :
 
-                auth :
+                host    : "ftp.baijs.nl"
+                port    : 21
+                authKey : "<%= pkg.name %>"
 
-                    host    : "ftp.baijs.nl"
-                    port    : 21
-                    authKey : "<%= pkg.name %>"
-
-                src  : "<%= PRO_PATH %>"
-                dest : "/"
+            src  : [ "dist/docs", "dist/<%= pkg.name %>-<%= pkg.version %>.zip"]
+            dest : "/"
 
     #  Load all the task modules we need.
     #
@@ -164,11 +162,11 @@ module.exports = ( grunt ) ->
         [
             "jshint"
             "clean:dist"
-            "copy:dist"
-            "uglify:dist"
+            "copy:docs"
+            "uglify:lib"
             "copy:examples"
             "replace:dist"
-            "compress:dist"
+            "compress:docs"
             "compress:examples"
         ]
     )
@@ -179,6 +177,6 @@ module.exports = ( grunt ) ->
         "ftp"
         [
             "default"
-            "ftp-deploy:dist"
+            "ftp-deploy"
         ]
     )

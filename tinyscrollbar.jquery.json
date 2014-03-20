@@ -1,0 +1,35 @@
+{
+  "name": "tinyscrollbar",
+  "title": "Tiny Scrollbar",
+  "version": "2.1.0",
+  "description": "A lightweight cross browser jQuery based scrollbar.",
+  "homepage": "http://www.baijs.com/tinyscrollbar",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/wieringen/tinyscrollbar.git"
+  },
+  "keywords": [
+    "UI",
+    "jQuery",
+    "Mobile",
+    "scrollbar",
+    "javascript"
+  ],
+  "author": {
+    "name": "Maarten Baijs",
+    "email": "wieringen@gmail.com"
+  },
+  "licenses": [
+    {
+      "type": "MIT",
+      "url": "https://github.com/wieringen/tinsycrollbar/blob/master/MIT-LICENSE.txt"
+    }
+  ],
+  "bugs": "https://github.com/wieringen/tinsycrollbar/issues",
+  "download": "http://baijs.com/tinsycrollbar/"
+  "demo" : "http://baijs.com/tinsycrollbar/"
+  "docs" : "http://baijs.com/tinsycrollbar/"
+  "dependencies": {
+    "jquery": ">=1.5"
+  }
+}

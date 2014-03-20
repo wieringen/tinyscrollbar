@@ -46,7 +46,7 @@ Then, to get a complete, minified (w/ Uglify.js), linted (w/ JSHint) version of 
 grunt
 ```
 
-The built version of tinyscrollbar will be put in the `dist/` subdirectory, along with the minified copy and associated map file.
+The build version of tinyscrollbar will be put in the `dist/` subdirectory, along with the minified copy and associated map file.
 
 
 Questions?

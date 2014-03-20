@@ -6,10 +6,10 @@
         <meta charset="utf-8">
         <meta name="description" content="A crossbrowser lightweight javascript/jQuery scrollbar." />
 
-        <link rel="stylesheet" href="css/website.css" type="text/css" media="screen"/>
+        <link rel="stylesheet" href="tinyscrollbar.css" type="text/css" media="screen"/>
 
         <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script>
-        <script type="text/javascript" src="../../js/jquery.tinyscrollbar.js"></script>
+        <script type="text/javascript" src="../../lib/jquery.tinyscrollbar.js"></script>
         <script type="text/javascript">
             $(document).ready(function()
             {
@@ -37,7 +37,7 @@
                     {
                         loadingData = true;
 
-                        $.getJSON("json/data.json", function(data)
+                        $.getJSON("data.json", function(data)
                         {
                             loadingData = false;
 

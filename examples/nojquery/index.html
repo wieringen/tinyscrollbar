@@ -6,25 +6,31 @@
         <meta charset="utf-8">
         <meta name="description" content="A crossbrowser lightweight javascript/jQuery scrollbar." />
 
-        <link rel="stylesheet" href="css/website.css" type="text/css" media="screen"/>
+        <link rel="stylesheet" href="tinyscrollbar.css" type="text/css" media="screen"/>
 
-        <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script>
-        <script type="text/javascript" src="../../js/jquery.tinyscrollbar.js"></script>
+        <script type="text/javascript" src="../../lib/tinyscrollbar.js"></script>
         <script type="text/javascript">
-            $(document).ready(function()
+            window.onload = function()
             {
-                var $scrollbar = $("#scrollbar1");
+                // The plain javascript api is very similar to the jquery version with some exceptions.
+                // There is no chaining like in the jquery api. So when you create a instance it
+                // will return all methods and properties.
+                //
+                var $scrollbar = document.getElementById("scrollbar1")
+                ,   scrollbar  = tinyscrollbar($scrollbar)
+                ;
 
-                $scrollbar.tinyscrollbar();
+                // You can now call methods liks scrollbar.update() or scrollbar.contentPosition
 
-                var scrollbar = $scrollbar.data("plugin_tinyscrollbar");
-
-                $(window).resize(function()
+                // Here is a example how you can bind the move event to the scrollbar container.
+                //
+                $scrollbar.addEventListener("move", function()
                 {
-                    scrollbar.update("relative");
-                });
-            });
+                    console.log(scrollbar.contentPosition);
+                }, false);
+            }
         </script>
+
     </head>
     <body>
         <div id="scrollbar1">
@@ -45,5 +51,6 @@
                 </div>
             </div>
         </div>
+
     </body>
 </html>
