@@ -40,10 +40,10 @@ module.exports = ( grunt ) ->
 
                 files : [
                     { expand: true, cwd: "examples", src: "**/*",                     dest: "dist/examples" }
-                    { expand: true, cwd: "lib", src: "jquery.<%= pkg.name %>.min.js", dest: "dist/examples/infinite" }
-                    { expand: true, cwd: "lib", src: "jquery.<%= pkg.name %>.min.js", dest: "dist/examples/simple" }
-                    { expand: true, cwd: "lib", src: "jquery.<%= pkg.name %>.min.js", dest: "dist/examples/responsive" }
-                    { expand: true, cwd: "lib", src: "<%= pkg.name %>.min.js",        dest: "dist/examples/nojquery" }
+                    { expand: true, cwd: "lib", src: "jquery.<%= pkg.name %>*", dest: "dist/examples/infinite" }
+                    { expand: true, cwd: "lib", src: "jquery.<%= pkg.name %>*", dest: "dist/examples/simple" }
+                    { expand: true, cwd: "lib", src: "jquery.<%= pkg.name %>*", dest: "dist/examples/responsive" }
+                    { expand: true, cwd: "lib", src: "<%= pkg.name %>*",        dest: "dist/examples/nojquery" }
                 ]
 
         #  Validate javascript files with jsHint.
@@ -136,14 +136,28 @@ module.exports = ( grunt ) ->
         #
         "ftp-deploy" :
 
-            auth :
+            docs :
 
-                host    : "ftp.baijs.nl"
-                port    : 21
-                authKey : "<%= pkg.name %>"
+                auth :
 
-            src  : [ "dist/docs", "dist/<%= pkg.name %>-<%= pkg.version %>.zip"]
-            dest : "/"
+                    host    : "ftp.baijs.nl"
+                    port    : 21
+                    authKey : "<%= pkg.name %>"
+
+                src  : "dist/docs"
+                dest : "/"
+
+            examples :
+
+                auth :
+
+                    host    : "ftp.baijs.nl"
+                    port    : 21
+                    authKey : "<%= pkg.name %>"
+
+                src  : "dist/"
+                dest : "/"
+                exclusions: ["docs", "<%= pkg.name %>-<%= pkg.version %>-docs.zip"]
 
     #  Load all the task modules we need.
     #
@@ -177,6 +191,7 @@ module.exports = ( grunt ) ->
         "ftp"
         [
             "default"
-            "ftp-deploy"
+            "ftp-deploy:docs"
+            "ftp-deploy:examples"
         ]
     )
