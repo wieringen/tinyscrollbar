@@ -27,13 +27,10 @@ module.exports = ( grunt ) ->
             docs :
 
                 files : [
-                    { expand: true, cwd: "docs", src: "images/**/*", dest: "dist/docs" }
-                    { expand: true, cwd: "docs", src: "css/**/*",    dest: "dist/docs" }
-                    { expand: true, cwd: "node_modules/baijs", src: "css/**/*",    dest: "dist/docs" }
-                    { expand: true, cwd: "node_modules/baijs", src: "js/**/*",     dest: "dist/docs" }
-                    { expand: true, cwd: "docs", src: "js/**/*",     dest: "dist/docs" }
-                    { expand: true, cwd: "lib",  src: "**/*",        dest: "dist/docs/js" }
-                    { expand: true, cwd: "docs", src: "index.html",  dest: "dist/docs" }
+                    { expand: true, cwd: "docs", src: "**/*", dest: "dist/docs" }
+                    { expand: true, cwd: "node_modules/baijs", src: "css/**/*", dest: "dist/docs" }
+                    { expand: true, cwd: "node_modules/baijs", src: "js/**/*",  dest: "dist/docs" }
+                    { expand: true, cwd: "lib",  src: "**/*", dest: "dist/docs/js" }
                 ]
 
             examples :
