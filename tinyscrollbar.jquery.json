@@ -26,9 +26,9 @@
     }
   ],
   "bugs": "https://github.com/wieringen/tinsycrollbar/issues",
-  "download": "http://baijs.com/tinsycrollbar/"
-  "demo" : "http://baijs.com/tinsycrollbar/"
-  "docs" : "http://baijs.com/tinsycrollbar/"
+  "download": "http://baijs.com/tinsycrollbar/",
+  "demo" : "http://baijs.com/tinsycrollbar/",
+  "docs" : "http://baijs.com/tinsycrollbar/",
   "dependencies": {
     "jquery": ">=1.5"
   }
