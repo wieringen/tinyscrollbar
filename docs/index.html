@@ -8,7 +8,7 @@
         <meta name="description" content="A crossbrowser lightweight javascript/jQuery scrollbar." />
         <meta name="keywords" content="lightweight, jQuery, plugin, scrollbar, plain javascript, microlib, vanilla javascript, tinyscrollbar, Tiny Scrollbar, web 2.0" />
         <meta name="author" content="Maarten baijs" />
-        <meta name="copyright" content="Maarten Baijs 2007-2012 // All rights reserved, all graphics copyrighted." />
+        <meta name="viewport" content="width=device-width,initial-scale=1" />
 
         <link href='http://fonts.googleapis.com/css?family=PT+Sans' rel='stylesheet' type='text/css'>
         <link rel="stylesheet" href="../node_modules/baijs/css/website.css" type="text/css" media="screen"/>
@@ -22,11 +22,6 @@
             <link rel="stylesheet" href="../node_modules/baijs/css/website_ie.css" type="text/css" media="screen"/>
         <![endif]-->
 
-        <!--[if lte IE 5]>
-            <script type="text/javascript"> function handleError() { return true; } window.onerror = handleError; </script>
-        <![endif]-->
-
-        <!-- Add jQuery library -->
         <script type="text/javascript" src="http://code.jquery.com/jquery-latest.min.js"></script>
 
         <!-- Add tinyscrollbar JS -->
@@ -40,141 +35,152 @@
 
     <body>
 
-    <!-- OPEN WRAPPER -->
     <div id="wrapper">
-        <div id="wrapper-inner">
 
-            <!-- OPEN HEADER -->
-            <header id="header">
-                <h1>Tiny Scrollbar</h1>
-                <span class="slogan">A crossbrowser lightweight Javascript / jQuery scrollbar.</span>
+        <header id="header">
+            <h1>Tiny Scrollbar</h1>
+            <span class="slogan">A crossbrowser lightweight Javascript / jQuery scrollbar.</span>
 
-                <div class="block-download">
-                    <a href="tinyscrollbar-@@bnr@@.zip" class="download">Download v@@bnr@@</a>
+            <a href="tinyscrollbar-@@bnr@@.zip" class="btn-download">Download v@@bnr@@</a>
+        </header>
+
+        <nav id="menu">
+            <ul>
+                <li><a href="/">Home</a></li>
+                <li><a href="../tinycarousel">Tiny Carousel</a></li>
+                <li><a href="../tinyscrollbar" class="active">Tiny Scrollbar</a></li>
+                <li><a href="../tinycircleslider">Tiny Circleslider</a></li>
+                <li><a href="../tinycolorpicker">Tiny Colorpicker</a></li>
+            </ul>
+
+            <select>
+                <option value="" selected="selected">Go to..</option>
+                <option value="/">Home</option>
+                <option value="../tinycarousel">Tiny Carousel</option>
+                <option value="../tinyscrollbar">Tiny Scrollbar</option>
+                <option value="../tinycircleslider">Tiny Circleslider</option>
+                <option value="../tinycolorpicker">Tiny Colorpicker</option>
+            </select>
+        </nav>
+
+        <article id="col-main">
+
+            <section class="block">
+                <!-- google_ad_section_start -->
+                <h2>What is it?</h2>
+
+                <p>Tiny Scrollbar is a nice and elegant way to enable the scrolling of content on mobile and desktop devices. Its designed to be a dynamic lightweight utility. Furthermore it gives a User Interface Designer a powerful way of enhancing the Ui (user interface) of a website.</p>
+                <p>It comes in 2 flavours as a vanilla Javascript microlib and a jQuery plugin. The jQuery plugin does not need any other external libraries like jQuery Ui.</p>
+                <p>Browser support differs between the jQuery plugin and the plain Javascript microlib. Specifically, the plain Javascript microlib does not support legacy browsers such as IE6-8. Use the jQuery plugin release if support for those browsers is required.</p>
+                <!-- google_ad_section_end -->
+
+                <!-- AddThis Button BEGIN -->
+                <div class="addthis_toolbox addthis_default_style ">
+                    <a class="addthis_button_facebook"></a>
+                    <a class="addthis_button_twitter"></a>
+                    <a class="addthis_button_delicious"></a>
                 </div>
+                <script type="text/javascript" src="//s7.addthis.com/js/300/addthis_widget.js#pubid=ra-52f90afd62b4f6ee"></script>
+                <!-- AddThis Button END -->
+            </section>
 
-            </header>
-            <!-- CLOSE HEADER -->
+            <section class="block">
+                <!-- google_ad_section_start -->
+                <h2>Features</h2>
+                <ul class="list">
+                    <li><strong>Completely rewritten!</strong></li>
+                    <li><strong>IOS and Android support.</strong></li>
+                    <li><strong>Available as a jQuery plugin and as a vanilla Javascript microlib.</strong></li>
+                    <li>AMD, Node, requirejs and commonjs support.</li>
+                    <li>Can scroll vertical or horizontal</li>
+                    <li>Supports scrolling by wheel, thumb, track or touch.</li>
+                    <li>It has a update function so it can handle (async) content changes.</li>
+                    <li>Size of the track and thumb can be set to auto or a fixed number </li>
+                    <li>Easy customizable</li>
+                    <li>Supports normal scrolling and mobile style invert scrolling.</li>
+                    <li>Examples can be seen on this page, by downloading the zip or <a href="examples">here</a></li>
+                    <li>Lightweight</li>
+                    <li><a href="https://github.com/wieringen/tinyscrollbar">Source is on GitHub</a></li>
+                </ul>
+                <!-- google_ad_section_end -->
+            </section>
 
-            <!-- OPEN COLUMN MAIN -->
-            <section id="col-main">
-                <div class="col-content">
+            <section class="block">
+                <h2>Examples</h2>
 
-                    <div class="block">
-                        <!-- google_ad_section_start -->
-                        <h2>What is it?</h2>
-                        <p>Tiny Scrollbar is a nice and elegant way to enable the scrolling of content on mobile and desktop devices. Its designed to be a dynamic lightweight utility. Furthermore it gives a User Interface Designer a powerful way of enhancing the Ui (user interface) of a website.</p>
-                        <p>It comes in 2 flavors as a vanilla Javascript microlib and a jQuery plugin. The jQuery plugin does not need any other external libaries like jQuery Ui.
-                        </p>
-                        <p>Browser support differs between the jQuery plugin and the plain Javascript microlib. Specifically, the plain Javascript microlib does not support legacy browsers such as IE6-8. Use the jQuery plugin release if support for those browsers is required.</p>
-                        <!-- google_ad_section_end -->
+                <p>The examples below are all for the jQuery Plugin. If you need some more (advanced) examples you can find them <a href="examples">here</a>. You can also find a example for the plain javascript library there.</p>
 
-                        <!-- AddThis Button BEGIN -->
-                        <div class="addthis_toolbox addthis_default_style ">
-                            <a class="addthis_button_facebook"></a>
-                            <a class="addthis_button_twitter"></a>
-                            <a class="addthis_button_delicious"></a>
+                <!-- google_ad_section_start(weight=ignore) -->
+                <div id="scrollbar1">
+                    <div class="scrollbar"><div class="track"><div class="thumb"><div class="end"></div></div></div></div>
+                    <div class="viewport">
+                        <div class="overview">
+                            <h3>Magnis dis parturient montes</h3>
+                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut vitae velit at velit pretium sodales. Maecenas egestas imperdiet mauris, vel elementum turpis iaculis eu. Duis egestas augue quis ante ornare eu tincidunt magna interdum. Vestibulum posuere risus non ipsum sollicitudin quis viverra ante feugiat. Pellentesque non faucibus lorem. Nunc tincidunt diam nec risus ornare quis porttitor enim pretium. Ut adipiscing tempor massa, a ullamcorper massa bibendum at. Suspendisse potenti. In vestibulum enim orci, nec consequat turpis. Suspendisse sit amet tellus a quam volutpat porta. Mauris ornare augue ut diam tincidunt elementum. Vivamus commodo dapibus est, a gravida lorem pharetra eu. Maecenas ultrices cursus tellus sed congue. Cras nec nulla erat.</p>
+
+                            <p>Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Pellentesque eget mauris libero. Nulla sit amet felis in sem posuere laoreet ut quis elit. Aenean mauris massa, pretium non bibendum eget, elementum sed nibh. Nulla ac felis et purus adipiscing rutrum. Pellentesque a bibendum sapien. Vivamus erat quam, gravida sed ultricies ac, scelerisque sed velit. Integer mollis urna sit amet ligula aliquam ac sodales arcu euismod. Fusce fermentum augue in nulla cursus non fermentum lorem semper. Quisque eu auctor lacus. Donec justo justo, mollis vel tempor vitae, consequat eget velit.</p>
+
+                            <p>Vivamus sed tellus quis orci dignissim scelerisque nec vitae est. Duis et elit ipsum. Aliquam pharetra auctor felis tempus tempor. Vivamus turpis dui, sollicitudin eget rhoncus in, luctus vel felis. Curabitur ultricies dictum justo at luctus. Nullam et quam et massa eleifend sollicitudin. Nulla mauris purus, sagittis id egestas eu, pellentesque et mi. Donec bibendum cursus nisi eget consequat. Nunc sit amet commodo metus. Integer consectetur lacus ac libero adipiscing ut tristique est viverra. Maecenas quam nibh, molestie nec pretium interdum, porta vitae magna. Maecenas at ligula eget neque imperdiet faucibus malesuada sed ipsum. Nulla auctor ligula sed nisl adipiscing vulputate. Curabitur ut ligula sed velit pharetra fringilla. Cras eu luctus est. Aliquam ac urna dui, eu rhoncus nibh. Nam id leo nisi, vel viverra nunc. Duis egestas pellentesque lectus, a placerat dolor egestas in. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Donec vitae ipsum non est iaculis suscipit.</p>
+
+                            <h3>Adipiscing risus </h3>
+                            <p>Quisque vel felis ligula. Cras viverra sapien auctor ante porta a tincidunt quam pulvinar. Nunc facilisis, enim id volutpat sodales, leo ipsum accumsan diam, eu adipiscing risus nisi eu quam. Ut in tortor vitae elit condimentum posuere vel et erat. Duis at fringilla dolor. Vivamus sem tellus, porttitor non imperdiet et, rutrum id nisl. Nunc semper facilisis porta. Curabitur ornare metus nec sapien molestie in mattis lorem ullamcorper. Ut congue, purus ac suscipit suscipit, magna diam sodales metus, tincidunt imperdiet diam odio non diam. Ut mollis lobortis vulputate. Nam tortor tortor, dictum sit amet porttitor sit amet, faucibus eu sem. Curabitur aliquam nisl sed est semper a fringilla velit porta. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Vestibulum in sapien id nulla volutpat sodales ac bibendum magna. Cras sollicitudin, massa at sodales sodales, lacus tortor vestibulum massa, eu consequat dui nulla et ipsum.</p>
+
+                            <p>Aliquam accumsan aliquam urna, id vulputate ante posuere eu. Nullam pretium convallis tincidunt. Duis vitae odio arcu, ut fringilla enim. Nam ante eros, vestibulum sit amet rhoncus et, vehicula quis tellus. Curabitur sed iaculis odio. Praesent vitae ligula id tortor ornare luctus. Integer placerat urna non ligula sollicitudin vestibulum. Nunc vestibulum auctor massa, at varius nibh scelerisque eget. Aliquam convallis, nunc non laoreet mollis, neque est mattis nisl, nec accumsan velit nunc ut arcu. Donec quis est mauris, eu auctor nulla. Fusce leo diam, tempus a varius sit amet, auctor ac metus. Nam turpis nulla, fermentum in rhoncus et, auctor id sem. Aliquam id libero eu neque elementum lobortis nec et odio.</p>
                         </div>
-                        <script type="text/javascript" src="//s7.addthis.com/js/300/addthis_widget.js#pubid=ra-52f90afd62b4f6ee"></script>
-                        <!-- AddThis Button END -->
-                    </div>
-
-                    <!-- google_ad_section_start -->
-                    <div class="block">
-                        <h2>Features</h2>
-                        <ul class="list">
-                            <li><strong>Completely rewritten!</strong></li>
-                            <li><strong>IOS and Android support.</strong></li>
-                            <li><strong>Available as a jQuery plugin and as a vanilla Javascript microlib.</strong></li>
-                            <li>AMD, Node, requirejs and commonjs support.</li>
-                            <li>Can scroll vertical or horizontal</li>
-                            <li>Supports scrolling by wheel, thumb, track or touch.</li>
-                            <li>It has a update function so it can handle (async) content changes.</li>
-                            <li>Size of the track and thumb can be set to auto or a fixed number </li>
-                            <li>Easy customizable</li>
-                            <li>Supports normal scrolling and mobile style invert scrolling.</li>
-                            <li>Examples can be seen on this page, by downloading the zip or <a href="examples">here</a></li>
-                            <li>Lightweight</li>
-                            <li><a href="https://github.com/wieringen/tinyscrollbar">Source is on GitHub</a></li>
-                        </ul>
                     </div>
                     <!-- google_ad_section_end -->
 
-                    <h2>Examples</h2>
+                    <script type="text/javascript">
+                        $(document).ready(function()
+                        {
+                            $("#scrollbar1").tinyscrollbar();
+                        });
+                    </script>
+                </div>
 
-                    <p>The examples below are all for the jQuery Plugin. If you need some more (advanced) examples you can find them <a href="examples">here</a>. You can also find a example for the plain javascript library there.</p>
-
-                    <!-- google_ad_section_start(weight=ignore) -->
-                    <div id="scrollbar1">
-                        <div class="scrollbar"><div class="track"><div class="thumb"><div class="end"></div></div></div></div>
-                        <div class="viewport">
-                            <div class="overview">
-                                <h3>Magnis dis parturient montes</h3>
-                                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut vitae velit at velit pretium sodales. Maecenas egestas imperdiet mauris, vel elementum turpis iaculis eu. Duis egestas augue quis ante ornare eu tincidunt magna interdum. Vestibulum posuere risus non ipsum sollicitudin quis viverra ante feugiat. Pellentesque non faucibus lorem. Nunc tincidunt diam nec risus ornare quis porttitor enim pretium. Ut adipiscing tempor massa, a ullamcorper massa bibendum at. Suspendisse potenti. In vestibulum enim orci, nec consequat turpis. Suspendisse sit amet tellus a quam volutpat porta. Mauris ornare augue ut diam tincidunt elementum. Vivamus commodo dapibus est, a gravida lorem pharetra eu. Maecenas ultrices cursus tellus sed congue. Cras nec nulla erat.</p>
-
-                                <p>Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Pellentesque eget mauris libero. Nulla sit amet felis in sem posuere laoreet ut quis elit. Aenean mauris massa, pretium non bibendum eget, elementum sed nibh. Nulla ac felis et purus adipiscing rutrum. Pellentesque a bibendum sapien. Vivamus erat quam, gravida sed ultricies ac, scelerisque sed velit. Integer mollis urna sit amet ligula aliquam ac sodales arcu euismod. Fusce fermentum augue in nulla cursus non fermentum lorem semper. Quisque eu auctor lacus. Donec justo justo, mollis vel tempor vitae, consequat eget velit.</p>
-
-                                <p>Vivamus sed tellus quis orci dignissim scelerisque nec vitae est. Duis et elit ipsum. Aliquam pharetra auctor felis tempus tempor. Vivamus turpis dui, sollicitudin eget rhoncus in, luctus vel felis. Curabitur ultricies dictum justo at luctus. Nullam et quam et massa eleifend sollicitudin. Nulla mauris purus, sagittis id egestas eu, pellentesque et mi. Donec bibendum cursus nisi eget consequat. Nunc sit amet commodo metus. Integer consectetur lacus ac libero adipiscing ut tristique est viverra. Maecenas quam nibh, molestie nec pretium interdum, porta vitae magna. Maecenas at ligula eget neque imperdiet faucibus malesuada sed ipsum. Nulla auctor ligula sed nisl adipiscing vulputate. Curabitur ut ligula sed velit pharetra fringilla. Cras eu luctus est. Aliquam ac urna dui, eu rhoncus nibh. Nam id leo nisi, vel viverra nunc. Duis egestas pellentesque lectus, a placerat dolor egestas in. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Donec vitae ipsum non est iaculis suscipit.</p>
-
-                                <h3>Adipiscing risus </h3>
-                                <p>Quisque vel felis ligula. Cras viverra sapien auctor ante porta a tincidunt quam pulvinar. Nunc facilisis, enim id volutpat sodales, leo ipsum accumsan diam, eu adipiscing risus nisi eu quam. Ut in tortor vitae elit condimentum posuere vel et erat. Duis at fringilla dolor. Vivamus sem tellus, porttitor non imperdiet et, rutrum id nisl. Nunc semper facilisis porta. Curabitur ornare metus nec sapien molestie in mattis lorem ullamcorper. Ut congue, purus ac suscipit suscipit, magna diam sodales metus, tincidunt imperdiet diam odio non diam. Ut mollis lobortis vulputate. Nam tortor tortor, dictum sit amet porttitor sit amet, faucibus eu sem. Curabitur aliquam nisl sed est semper a fringilla velit porta. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Vestibulum in sapien id nulla volutpat sodales ac bibendum magna. Cras sollicitudin, massa at sodales sodales, lacus tortor vestibulum massa, eu consequat dui nulla et ipsum.</p>
-
-                                <p>Aliquam accumsan aliquam urna, id vulputate ante posuere eu. Nullam pretium convallis tincidunt. Duis vitae odio arcu, ut fringilla enim. Nam ante eros, vestibulum sit amet rhoncus et, vehicula quis tellus. Curabitur sed iaculis odio. Praesent vitae ligula id tortor ornare luctus. Integer placerat urna non ligula sollicitudin vestibulum. Nunc vestibulum auctor massa, at varius nibh scelerisque eget. Aliquam convallis, nunc non laoreet mollis, neque est mattis nisl, nec accumsan velit nunc ut arcu. Donec quis est mauris, eu auctor nulla. Fusce leo diam, tempus a varius sit amet, auctor ac metus. Nam turpis nulla, fermentum in rhoncus et, auctor id sem. Aliquam id libero eu neque elementum lobortis nec et odio.</p>
-                            </div>
-                        </div>
-                        <!-- google_ad_section_end -->
-
-                        <script type="text/javascript">
-                            $(document).ready(function()
-                            {
-                                $("#scrollbar1").tinyscrollbar();
-                            });
-                        </script>
-                    </div>
-
-                    <pre class="prettyprint"><code>
+                <pre class="prettyprint"><code>
 $(document).ready(function()
 {
     $("#scrollbar1").tinyscrollbar();
 });
-                    </code></pre>
+                </code></pre>
 
-                    <div class="block advert">
-                        <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
-                        <!-- Responsive -->
-                        <ins class="adsbygoogle"
-                             style="display:block"
-                             data-ad-client="ca-pub-6364750078473156"
-                             data-ad-slot="7734741654"
-                             data-ad-format="auto"></ins>
-                        <script>
-                        (adsbygoogle = window.adsbygoogle || []).push({});
-                        </script>
-                    </div>
+                <div class="block">
+                    <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+                    <!-- Responsive -->
+                    <ins class="adsbygoogle"
+                         style="display:block"
+                         data-ad-client="ca-pub-6364750078473156"
+                         data-ad-slot="7734741654"
+                         data-ad-format="auto"></ins>
+                    <script>
+                    (adsbygoogle = window.adsbygoogle || []).push({});
+                    </script>
+                </div>
 
-                    <!-- google_ad_section_start(weight=ignore) -->
-                    <div id="scrollbar2">
-                        <div class="scrollbar"><div class="track"><div class="thumb"><div class="end"></div></div></div></div>
-                        <div class="viewport">
-                            <div class="overview">
-                                <img src="images/picture7.jpg" alt="image 2" />
-                                <img src="images/picture5.jpg" alt="image 2" />
-                                <img src="images/picture6.jpg" alt="image 2" />
-                                <img src="images/picture4.jpg" alt="image 2" />
-                                <img src="images/picture3.jpg" alt="image 2" />
-                                <img src="images/picture2.jpg" alt="image 2" />
-                            </div>
+                <!-- google_ad_section_start(weight=ignore) -->
+                <div id="scrollbar2">
+                    <div class="scrollbar"><div class="track"><div class="thumb"><div class="end"></div></div></div></div>
+                    <div class="viewport">
+                        <div class="overview">
+                            <img src="images/picture7.jpg" alt="image 2" />
+                            <img src="images/picture5.jpg" alt="image 2" />
+                            <img src="images/picture6.jpg" alt="image 2" />
+                            <img src="images/picture4.jpg" alt="image 2" />
+                            <img src="images/picture3.jpg" alt="image 2" />
+                            <img src="images/picture2.jpg" alt="image 2" />
                         </div>
-                        <script type="text/javascript">
-                            $(document).ready(function()
-                            {
-                                $("#scrollbar2").tinyscrollbar({ axis: 'x' });
-                            });
-                        </script>
                     </div>
-                    <!-- google_ad_section_end -->
+                    <script type="text/javascript">
+                        $(document).ready(function()
+                        {
+                            $("#scrollbar2").tinyscrollbar({ axis: 'x' });
+                        });
+                    </script>
+                </div>
+                <!-- google_ad_section_end -->
 
-                    <pre class="prettyprint"><code>
+                <pre class="prettyprint"><code>
 $(document).ready(function()
 {
     // The axis option is for setting the dimension in
@@ -182,36 +188,36 @@ $(document).ready(function()
     //
     $("#scrollbar2").tinyscrollbar({ axis: "x"});
 });
-                    </code></pre>
+                </code></pre>
 
-                    <!-- google_ad_section_start(weight=ignore) -->
-                    <div id="scrollbar3">
-                        <div class="scrollbar"><div class="track"><div class="thumb"><div class="end"></div></div></div></div>
-                        <div class="viewport">
-                            <div class="overview">
-                                <h3>Magnis dis parturient montes</h3>
-                                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut vitae velit at velit pretium sodales. Maecenas egestas imperdiet mauris, vel elementum turpis iaculis eu. Duis egestas augue quis ante ornare eu tincidunt magna interdum. Vestibulum posuere risus non ipsum sollicitudin quis viverra ante feugiat. Pellentesque non faucibus lorem. Nunc tincidunt diam nec risus ornare quis porttitor enim pretium. Ut adipiscing tempor massa, a ullamcorper massa bibendum at. Suspendisse potenti. In vestibulum enim orci, nec consequat turpis. Suspendisse sit amet tellus a quam volutpat porta. Mauris ornare augue ut diam tincidunt elementum. Vivamus commodo dapibus est, a gravida lorem pharetra eu. Maecenas ultrices cursus tellus sed congue. Cras nec nulla erat.</p>
+                <!-- google_ad_section_start(weight=ignore) -->
+                <div id="scrollbar3">
+                    <div class="scrollbar"><div class="track"><div class="thumb"><div class="end"></div></div></div></div>
+                    <div class="viewport">
+                        <div class="overview">
+                            <h3>Magnis dis parturient montes</h3>
+                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut vitae velit at velit pretium sodales. Maecenas egestas imperdiet mauris, vel elementum turpis iaculis eu. Duis egestas augue quis ante ornare eu tincidunt magna interdum. Vestibulum posuere risus non ipsum sollicitudin quis viverra ante feugiat. Pellentesque non faucibus lorem. Nunc tincidunt diam nec risus ornare quis porttitor enim pretium. Ut adipiscing tempor massa, a ullamcorper massa bibendum at. Suspendisse potenti. In vestibulum enim orci, nec consequat turpis. Suspendisse sit amet tellus a quam volutpat porta. Mauris ornare augue ut diam tincidunt elementum. Vivamus commodo dapibus est, a gravida lorem pharetra eu. Maecenas ultrices cursus tellus sed congue. Cras nec nulla erat.</p>
 
-                                <p>Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Pellentesque eget mauris libero. Nulla sit amet felis in sem posuere laoreet ut quis elit. Aenean mauris massa, pretium non bibendum eget, elementum sed nibh. Nulla ac felis et purus adipiscing rutrum. Pellentesque a bibendum sapien. Vivamus erat quam, gravida sed ultricies ac, scelerisque sed velit. Integer mollis urna sit amet ligula aliquam ac sodales arcu euismod. Fusce fermentum augue in nulla cursus non fermentum lorem semper. Quisque eu auctor lacus. Donec justo justo, mollis vel tempor vitae, consequat eget velit.</p>
+                            <p>Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Pellentesque eget mauris libero. Nulla sit amet felis in sem posuere laoreet ut quis elit. Aenean mauris massa, pretium non bibendum eget, elementum sed nibh. Nulla ac felis et purus adipiscing rutrum. Pellentesque a bibendum sapien. Vivamus erat quam, gravida sed ultricies ac, scelerisque sed velit. Integer mollis urna sit amet ligula aliquam ac sodales arcu euismod. Fusce fermentum augue in nulla cursus non fermentum lorem semper. Quisque eu auctor lacus. Donec justo justo, mollis vel tempor vitae, consequat eget velit.</p>
 
-                                <p>Vivamus sed tellus quis orci dignissim scelerisque nec vitae est. Duis et elit ipsum. Aliquam pharetra auctor felis tempus tempor. Vivamus turpis dui, sollicitudin eget rhoncus in, luctus vel felis. Curabitur ultricies dictum justo at luctus. Nullam et quam et massa eleifend sollicitudin. Nulla mauris purus, sagittis id egestas eu, pellentesque et mi. Donec bibendum cursus nisi eget consequat. Nunc sit amet commodo metus. Integer consectetur lacus ac libero adipiscing ut tristique est viverra. Maecenas quam nibh, molestie nec pretium interdum, porta vitae magna. Maecenas at ligula eget neque imperdiet faucibus malesuada sed ipsum. Nulla auctor ligula sed nisl adipiscing vulputate. Curabitur ut ligula sed velit pharetra fringilla. Cras eu luctus est. Aliquam ac urna dui, eu rhoncus nibh. Nam id leo nisi, vel viverra nunc. Duis egestas pellentesque lectus, a placerat dolor egestas in. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Donec vitae ipsum non est iaculis suscipit.</p>
+                            <p>Vivamus sed tellus quis orci dignissim scelerisque nec vitae est. Duis et elit ipsum. Aliquam pharetra auctor felis tempus tempor. Vivamus turpis dui, sollicitudin eget rhoncus in, luctus vel felis. Curabitur ultricies dictum justo at luctus. Nullam et quam et massa eleifend sollicitudin. Nulla mauris purus, sagittis id egestas eu, pellentesque et mi. Donec bibendum cursus nisi eget consequat. Nunc sit amet commodo metus. Integer consectetur lacus ac libero adipiscing ut tristique est viverra. Maecenas quam nibh, molestie nec pretium interdum, porta vitae magna. Maecenas at ligula eget neque imperdiet faucibus malesuada sed ipsum. Nulla auctor ligula sed nisl adipiscing vulputate. Curabitur ut ligula sed velit pharetra fringilla. Cras eu luctus est. Aliquam ac urna dui, eu rhoncus nibh. Nam id leo nisi, vel viverra nunc. Duis egestas pellentesque lectus, a placerat dolor egestas in. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Donec vitae ipsum non est iaculis suscipit.</p>
 
-                                <h3>Adipiscing risus </h3>
-                                <p>Quisque vel felis ligula. Cras viverra sapien auctor ante porta a tincidunt quam pulvinar. Nunc facilisis, enim id volutpat sodales, leo ipsum accumsan diam, eu adipiscing risus nisi eu quam. Ut in tortor vitae elit condimentum posuere vel et erat. Duis at fringilla dolor. Vivamus sem tellus, porttitor non imperdiet et, rutrum id nisl. Nunc semper facilisis porta. Curabitur ornare metus nec sapien molestie in mattis lorem ullamcorper. Ut congue, purus ac suscipit suscipit, magna diam sodales metus, tincidunt imperdiet diam odio non diam. Ut mollis lobortis vulputate. Nam tortor tortor, dictum sit amet porttitor sit amet, faucibus eu sem. Curabitur aliquam nisl sed est semper a fringilla velit porta. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Vestibulum in sapien id nulla volutpat sodales ac bibendum magna. Cras sollicitudin, massa at sodales sodales, lacus tortor vestibulum massa, eu consequat dui nulla et ipsum.</p>
+                            <h3>Adipiscing risus </h3>
+                            <p>Quisque vel felis ligula. Cras viverra sapien auctor ante porta a tincidunt quam pulvinar. Nunc facilisis, enim id volutpat sodales, leo ipsum accumsan diam, eu adipiscing risus nisi eu quam. Ut in tortor vitae elit condimentum posuere vel et erat. Duis at fringilla dolor. Vivamus sem tellus, porttitor non imperdiet et, rutrum id nisl. Nunc semper facilisis porta. Curabitur ornare metus nec sapien molestie in mattis lorem ullamcorper. Ut congue, purus ac suscipit suscipit, magna diam sodales metus, tincidunt imperdiet diam odio non diam. Ut mollis lobortis vulputate. Nam tortor tortor, dictum sit amet porttitor sit amet, faucibus eu sem. Curabitur aliquam nisl sed est semper a fringilla velit porta. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Vestibulum in sapien id nulla volutpat sodales ac bibendum magna. Cras sollicitudin, massa at sodales sodales, lacus tortor vestibulum massa, eu consequat dui nulla et ipsum.</p>
 
-                                <p>Aliquam accumsan aliquam urna, id vulputate ante posuere eu. Nullam pretium convallis tincidunt. Duis vitae odio arcu, ut fringilla enim. Nam ante eros, vestibulum sit amet rhoncus et, vehicula quis tellus. Curabitur sed iaculis odio. Praesent vitae ligula id tortor ornare luctus. Integer placerat urna non ligula sollicitudin vestibulum. Nunc vestibulum auctor massa, at varius nibh scelerisque eget. Aliquam convallis, nunc non laoreet mollis, neque est mattis nisl, nec accumsan velit nunc ut arcu. Donec quis est mauris, eu auctor nulla. Fusce leo diam, tempus a varius sit amet, auctor ac metus. Nam turpis nulla, fermentum in rhoncus et, auctor id sem. Aliquam id libero eu neque elementum lobortis nec et odio.</p>
-                            </div>
+                            <p>Aliquam accumsan aliquam urna, id vulputate ante posuere eu. Nullam pretium convallis tincidunt. Duis vitae odio arcu, ut fringilla enim. Nam ante eros, vestibulum sit amet rhoncus et, vehicula quis tellus. Curabitur sed iaculis odio. Praesent vitae ligula id tortor ornare luctus. Integer placerat urna non ligula sollicitudin vestibulum. Nunc vestibulum auctor massa, at varius nibh scelerisque eget. Aliquam convallis, nunc non laoreet mollis, neque est mattis nisl, nec accumsan velit nunc ut arcu. Donec quis est mauris, eu auctor nulla. Fusce leo diam, tempus a varius sit amet, auctor ac metus. Nam turpis nulla, fermentum in rhoncus et, auctor id sem. Aliquam id libero eu neque elementum lobortis nec et odio.</p>
                         </div>
-                        <script type="text/javascript">
-                            $(document).ready(function()
-                            {
-                                $("#scrollbar3").tinyscrollbar({ trackSize: 100 });
-                            });
-                        </script>
                     </div>
-                    <!-- google_ad_section_end -->
+                    <script type="text/javascript">
+                        $(document).ready(function()
+                        {
+                            $("#scrollbar3").tinyscrollbar({ trackSize: 100 });
+                        });
+                    </script>
+                </div>
+                <!-- google_ad_section_end -->
 
-                    <pre class="prettyprint"><code>
+                <pre class="prettyprint"><code>
 $(document).ready(function()
 {
     // The size of the scrollbar can be set to a
@@ -219,36 +225,36 @@ $(document).ready(function()
     //
     $("#scrollbar3").tinyscrollbar({ trackSize: 100 });
 });
-                    </code></pre>
+                </code></pre>
 
-                    <!-- google_ad_section_start(weight=ignore) -->
-                    <div id="scrollbar4">
-                        <div class="scrollbar"><div class="track"><div class="thumb"><div class="end"></div></div></div></div>
-                        <div class="viewport">
-                            <div class="overview">
-                                <h3>Magnis dis parturient montes</h3>
-                                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut vitae velit at velit pretium sodales. Maecenas egestas imperdiet mauris, vel elementum turpis iaculis eu. Duis egestas augue quis ante ornare eu tincidunt magna interdum. Vestibulum posuere risus non ipsum sollicitudin quis viverra ante feugiat. Pellentesque non faucibus lorem. Nunc tincidunt diam nec risus ornare quis porttitor enim pretium. Ut adipiscing tempor massa, a ullamcorper massa bibendum at. Suspendisse potenti. In vestibulum enim orci, nec consequat turpis. Suspendisse sit amet tellus a quam volutpat porta. Mauris ornare augue ut diam tincidunt elementum. Vivamus commodo dapibus est, a gravida lorem pharetra eu. Maecenas ultrices cursus tellus sed congue. Cras nec nulla erat.</p>
+                <!-- google_ad_section_start(weight=ignore) -->
+                <div id="scrollbar4">
+                    <div class="scrollbar"><div class="track"><div class="thumb"><div class="end"></div></div></div></div>
+                    <div class="viewport">
+                        <div class="overview">
+                            <h3>Magnis dis parturient montes</h3>
+                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut vitae velit at velit pretium sodales. Maecenas egestas imperdiet mauris, vel elementum turpis iaculis eu. Duis egestas augue quis ante ornare eu tincidunt magna interdum. Vestibulum posuere risus non ipsum sollicitudin quis viverra ante feugiat. Pellentesque non faucibus lorem. Nunc tincidunt diam nec risus ornare quis porttitor enim pretium. Ut adipiscing tempor massa, a ullamcorper massa bibendum at. Suspendisse potenti. In vestibulum enim orci, nec consequat turpis. Suspendisse sit amet tellus a quam volutpat porta. Mauris ornare augue ut diam tincidunt elementum. Vivamus commodo dapibus est, a gravida lorem pharetra eu. Maecenas ultrices cursus tellus sed congue. Cras nec nulla erat.</p>
 
-                                <p>Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Pellentesque eget mauris libero. Nulla sit amet felis in sem posuere laoreet ut quis elit. Aenean mauris massa, pretium non bibendum eget, elementum sed nibh. Nulla ac felis et purus adipiscing rutrum. Pellentesque a bibendum sapien. Vivamus erat quam, gravida sed ultricies ac, scelerisque sed velit. Integer mollis urna sit amet ligula aliquam ac sodales arcu euismod. Fusce fermentum augue in nulla cursus non fermentum lorem semper. Quisque eu auctor lacus. Donec justo justo, mollis vel tempor vitae, consequat eget velit.</p>
+                            <p>Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Pellentesque eget mauris libero. Nulla sit amet felis in sem posuere laoreet ut quis elit. Aenean mauris massa, pretium non bibendum eget, elementum sed nibh. Nulla ac felis et purus adipiscing rutrum. Pellentesque a bibendum sapien. Vivamus erat quam, gravida sed ultricies ac, scelerisque sed velit. Integer mollis urna sit amet ligula aliquam ac sodales arcu euismod. Fusce fermentum augue in nulla cursus non fermentum lorem semper. Quisque eu auctor lacus. Donec justo justo, mollis vel tempor vitae, consequat eget velit.</p>
 
-                                <p>Vivamus sed tellus quis orci dignissim scelerisque nec vitae est. Duis et elit ipsum. Aliquam pharetra auctor felis tempus tempor. Vivamus turpis dui, sollicitudin eget rhoncus in, luctus vel felis. Curabitur ultricies dictum justo at luctus. Nullam et quam et massa eleifend sollicitudin. Nulla mauris purus, sagittis id egestas eu, pellentesque et mi. Donec bibendum cursus nisi eget consequat. Nunc sit amet commodo metus. Integer consectetur lacus ac libero adipiscing ut tristique est viverra. Maecenas quam nibh, molestie nec pretium interdum, porta vitae magna. Maecenas at ligula eget neque imperdiet faucibus malesuada sed ipsum. Nulla auctor ligula sed nisl adipiscing vulputate. Curabitur ut ligula sed velit pharetra fringilla. Cras eu luctus est. Aliquam ac urna dui, eu rhoncus nibh. Nam id leo nisi, vel viverra nunc. Duis egestas pellentesque lectus, a placerat dolor egestas in. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Donec vitae ipsum non est iaculis suscipit.</p>
+                            <p>Vivamus sed tellus quis orci dignissim scelerisque nec vitae est. Duis et elit ipsum. Aliquam pharetra auctor felis tempus tempor. Vivamus turpis dui, sollicitudin eget rhoncus in, luctus vel felis. Curabitur ultricies dictum justo at luctus. Nullam et quam et massa eleifend sollicitudin. Nulla mauris purus, sagittis id egestas eu, pellentesque et mi. Donec bibendum cursus nisi eget consequat. Nunc sit amet commodo metus. Integer consectetur lacus ac libero adipiscing ut tristique est viverra. Maecenas quam nibh, molestie nec pretium interdum, porta vitae magna. Maecenas at ligula eget neque imperdiet faucibus malesuada sed ipsum. Nulla auctor ligula sed nisl adipiscing vulputate. Curabitur ut ligula sed velit pharetra fringilla. Cras eu luctus est. Aliquam ac urna dui, eu rhoncus nibh. Nam id leo nisi, vel viverra nunc. Duis egestas pellentesque lectus, a placerat dolor egestas in. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Donec vitae ipsum non est iaculis suscipit.</p>
 
-                                <h3>Adipiscing risus </h3>
-                                <p>Quisque vel felis ligula. Cras viverra sapien auctor ante porta a tincidunt quam pulvinar. Nunc facilisis, enim id volutpat sodales, leo ipsum accumsan diam, eu adipiscing risus nisi eu quam. Ut in tortor vitae elit condimentum posuere vel et erat. Duis at fringilla dolor. Vivamus sem tellus, porttitor non imperdiet et, rutrum id nisl. Nunc semper facilisis porta. Curabitur ornare metus nec sapien molestie in mattis lorem ullamcorper. Ut congue, purus ac suscipit suscipit, magna diam sodales metus, tincidunt imperdiet diam odio non diam. Ut mollis lobortis vulputate. Nam tortor tortor, dictum sit amet porttitor sit amet, faucibus eu sem. Curabitur aliquam nisl sed est semper a fringilla velit porta. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Vestibulum in sapien id nulla volutpat sodales ac bibendum magna. Cras sollicitudin, massa at sodales sodales, lacus tortor vestibulum massa, eu consequat dui nulla et ipsum.</p>
+                            <h3>Adipiscing risus </h3>
+                            <p>Quisque vel felis ligula. Cras viverra sapien auctor ante porta a tincidunt quam pulvinar. Nunc facilisis, enim id volutpat sodales, leo ipsum accumsan diam, eu adipiscing risus nisi eu quam. Ut in tortor vitae elit condimentum posuere vel et erat. Duis at fringilla dolor. Vivamus sem tellus, porttitor non imperdiet et, rutrum id nisl. Nunc semper facilisis porta. Curabitur ornare metus nec sapien molestie in mattis lorem ullamcorper. Ut congue, purus ac suscipit suscipit, magna diam sodales metus, tincidunt imperdiet diam odio non diam. Ut mollis lobortis vulputate. Nam tortor tortor, dictum sit amet porttitor sit amet, faucibus eu sem. Curabitur aliquam nisl sed est semper a fringilla velit porta. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Vestibulum in sapien id nulla volutpat sodales ac bibendum magna. Cras sollicitudin, massa at sodales sodales, lacus tortor vestibulum massa, eu consequat dui nulla et ipsum.</p>
 
-                                <p>Aliquam accumsan aliquam urna, id vulputate ante posuere eu. Nullam pretium convallis tincidunt. Duis vitae odio arcu, ut fringilla enim. Nam ante eros, vestibulum sit amet rhoncus et, vehicula quis tellus. Curabitur sed iaculis odio. Praesent vitae ligula id tortor ornare luctus. Integer placerat urna non ligula sollicitudin vestibulum. Nunc vestibulum auctor massa, at varius nibh scelerisque eget. Aliquam convallis, nunc non laoreet mollis, neque est mattis nisl, nec accumsan velit nunc ut arcu. Donec quis est mauris, eu auctor nulla. Fusce leo diam, tempus a varius sit amet, auctor ac metus. Nam turpis nulla, fermentum in rhoncus et, auctor id sem. Aliquam id libero eu neque elementum lobortis nec et odio.</p>
-                            </div>
+                            <p>Aliquam accumsan aliquam urna, id vulputate ante posuere eu. Nullam pretium convallis tincidunt. Duis vitae odio arcu, ut fringilla enim. Nam ante eros, vestibulum sit amet rhoncus et, vehicula quis tellus. Curabitur sed iaculis odio. Praesent vitae ligula id tortor ornare luctus. Integer placerat urna non ligula sollicitudin vestibulum. Nunc vestibulum auctor massa, at varius nibh scelerisque eget. Aliquam convallis, nunc non laoreet mollis, neque est mattis nisl, nec accumsan velit nunc ut arcu. Donec quis est mauris, eu auctor nulla. Fusce leo diam, tempus a varius sit amet, auctor ac metus. Nam turpis nulla, fermentum in rhoncus et, auctor id sem. Aliquam id libero eu neque elementum lobortis nec et odio.</p>
                         </div>
-                        <script type="text/javascript">
-                            $(document).ready(function()
-                            {
-                                $("#scrollbar4").tinyscrollbar({ thumbSize: 15 });
-                            });
-                        </script>
                     </div>
-                    <!-- google_ad_section_end -->
+                    <script type="text/javascript">
+                        $(document).ready(function()
+                        {
+                            $("#scrollbar4").tinyscrollbar({ thumbSize: 15 });
+                        });
+                    </script>
+                </div>
+                <!-- google_ad_section_end -->
 
-                    <pre class="prettyprint"><code>
+                <pre class="prettyprint"><code>
 $(document).ready(function()
 {
     // The size of the scrollbar thumb can be set to a
@@ -256,69 +262,68 @@ $(document).ready(function()
     //
     $("#scrollbar4").tinyscrollbar({ thumbSize: 15 });
 });
-                    </code></pre>
+                </code></pre>
 
-                    <!-- google_ad_section_start(weight=ignore) -->
-                    <div id="scrollbar5">
-                        <div class="scrollbar"><div class="track"><div class="thumb"><div class="end"></div></div></div></div>
-                        <div class="viewport">
-                            <div class="overview">
-                                <h3>Aeolus</h3>
-                                <p>Aeolus was the ruler of the winds in Greek mythology. In fact this name was shared by three mythic characters. These three personages are often difficult to tell apart, and even the ancient mythographers appear to have been perplexed about which Aeolus was which. Diodorus Siculus made an attempt to define each of these three (although it is clear he also became muddled), and his opinion is followed here.[2] Briefly, the first Aeolus was a son of Hellen and eponymous founder of the Aeolian race; the second was a son of Poseidon, who led a colony to islands in the Tyrrhenian Sea; and the third Aeolus was a son of Hippotes who is mentioned in Odyssey book 10 as Keeper of the Winds who gives Odysseus a tightly closed bag full of the captured winds so he could sail easily home to Ithaca on the gentle West Wind. All three men named Aeolus appear to be connected genealogically, although the precise relationship, especially regarding the second and third Aeolus, is often ambiguous.</p>
-                            </div>
-                            <script type="text/javascript">
-                                $(document).ready(function()
+                <!-- google_ad_section_start(weight=ignore) -->
+                <div id="scrollbar5">
+                    <div class="scrollbar"><div class="track"><div class="thumb"><div class="end"></div></div></div></div>
+                    <div class="viewport">
+                        <div class="overview">
+                            <h3>Aeolus</h3>
+                            <p>Aeolus was the ruler of the winds in Greek mythology. In fact this name was shared by three mythic characters. These three personages are often difficult to tell apart, and even the ancient mythographers appear to have been perplexed about which Aeolus was which. Diodorus Siculus made an attempt to define each of these three (although it is clear he also became muddled), and his opinion is followed here.[2] Briefly, the first Aeolus was a son of Hellen and eponymous founder of the Aeolian race; the second was a son of Poseidon, who led a colony to islands in the Tyrrhenian Sea; and the third Aeolus was a son of Hippotes who is mentioned in Odyssey book 10 as Keeper of the Winds who gives Odysseus a tightly closed bag full of the captured winds so he could sail easily home to Ithaca on the gentle West Wind. All three men named Aeolus appear to be connected genealogically, although the precise relationship, especially regarding the second and third Aeolus, is often ambiguous.</p>
+                        </div>
+                        <script type="text/javascript">
+                            $(document).ready(function()
+                            {
+                                var $scrollbar5 = $('#scrollbar5')
+                                ,   $overview   = $scrollbar5.find(".overview")
+                                ,   $texts      = $(".scrollbar5text")
+                                ;
+
+                                $scrollbar5.tinyscrollbar();
+
+                                $(".scrollbar5button").click(function()
                                 {
-                                    var $scrollbar5 = $('#scrollbar5')
-                                    ,   $overview   = $scrollbar5.find(".overview")
-                                    ,   $texts      = $(".scrollbar5text")
+                                    var typeOfUpdate = $(this).attr("data-update") || ""
+                                    ,   textId       = $(this).attr("data-text") || 0
+                                    ,   textNew      = $texts[textId].innerHTML
+                                    ,   scrollbar5   = $scrollbar5.data("plugin_tinyscrollbar")
                                     ;
 
-                                    $scrollbar5.tinyscrollbar();
+                                    $overview.html(textNew);
 
-                                    $(".scrollbar5button").click(function()
-                                    {
-                                        var typeOfUpdate = $(this).attr("data-update") || ""
-                                        ,   textId       = $(this).attr("data-text") || 0
-                                        ,   textNew      = $texts[textId].innerHTML
-                                        ,   scrollbar5   = $scrollbar5.data("plugin_tinyscrollbar")
-                                        ;
+                                    scrollbar5.update(typeOfUpdate);
 
-                                        $overview.html(textNew);
-
-                                        scrollbar5.update(typeOfUpdate);
-
-                                        return false;
-                                    });
+                                    return false;
                                 });
-                            </script>
-                        </div>
-
-                        <a class="scrollbar5button" data-text="0" href="#">Update with tiny text</a>
-                        <a class="scrollbar5button" data-text="1" href="#">Update with middle text</a>
-                        <a class="scrollbar5button" data-text="2" href="#">Update with large text</a>
-                        <a class="scrollbar5button" data-update="relative" data-text="1" href="#">Update with middle text relative to the current text.</a>
-                        <a class="scrollbar5button" data-update="relative" data-text="2" href="#">Update with large text relative to the current text.</a>
-                        <a class="scrollbar5button" data-update="bottom" data-text="1" href="#">Update with middle text and goto bottom.</a>
-                        <a class="scrollbar5button" data-update="bottom" data-text="2" href="#">Update with large text and goto bottom.</a>
-
-                        <div class="scrollbar5text">
-                            <h3>Heracles</h3>
-                            <p>He was the greatest of the Greek heroes, a paragon of masculinity, the ancestor of royal clans who claimed to be Heracleidae and a champion of the Olympian order against chthonic monsters.</p>
-                        </div>
-                        <div class="scrollbar5text">
-                            <h3>Theseus</h3>
-                            <p>Theseus was the mythical founder-king of Athens, son of Aethra, and fathered by Aegeus and Poseidon, both of whom Aethra lay with in one night.</p> <p>Theseus was a founder-hero, like Perseus, Cadmus or Heracles, all of whom battled and overcame foes that were identified with an archaic religious and social order.[1] As Heracles was the Dorian hero, Theseus was the Ionian founding hero, considered by Athenians as their own great reformer. His name comes from the same root as thesmos, Greek for institution.</p> <p>He was responsible for the synoikismos ("dwelling together") the political unification of Attica  under Athens, represented emblematically in his journey of labours, subduing highly localized ogres and monstrous beasts. Because he was the unifying king, Theseus built and occupied a palace on the fortress of the Acropolis that may have been similar to the palace that was excavated in Mycenae. Pausanias reports that after the synoikismos, Theseus established a cult of Aphrodite Pandemos ("Aphrodite of all the People") and Peitho on the southern slope of the Acropolis.</p>
-                        </div>
-                        <div class="scrollbar5text">
-                            <h3>Aeacus</h3>
-                            <p>Aeacus was a mythological king of the island of Aegina in the Saronic Gulf. He was son of Zeus and Aegina, a daughter of the river-god Asopus.[1] He was born in the island of Oenone or Oenopia, to which Aegina had been carried by Zeus to secure her from the anger of her parents, and whence this island was afterwards called Aegina.[2][3][4][5][6] According to some accounts Aeacus was a son of Zeus and Europa. Some traditions related that at the time when Aeacus was born, Aegina was not yet inhabited, and that Zeus changed the ants of the island into men (Myrmidons) over whom Aeacus ruled, or that he made men grow up out of the earth.[2][7][8] Ovid, on the other hand, supposes that the island was not uninhabited at the time of the birth of Aeacus, and states that, in the reign of Aeacus, Hera, jealous of Aegina, ravaged the island bearing the name of the latter by sending a plague or a fearful dragon into it, by which nearly all its inhabitants were carried off, and that Zeus restored the population by changing the ants into men.[9][10][11] These legends are nothing but a mythical account of the colonization of Aegina, which seems to have been originally inhabited by Pelasgians, and afterwards received colonists from Phthiotis, the seat of the Myrmidons, and from Phlius on the Asopus. Aeacus while he reigned in Aegina was renowned in all Greece for his justice and piety, and was frequently called upon to settle disputes not only among men, but even among the gods themselves.[12][13] He was such a favourite with the latter, that, when Greece was visited by a drought in consequence of a murder which had been committed, the oracle of Delphi declared that the calamity would not cease unless Aeacus prayed to the gods that it might.[2][14] Aeacus prayed, and it ceased in consequence. Aeacus himself showed his gratitude by erecting a temple to Zeus Panhellenius on mount Panhellenion,[15] and the Aeginetans afterwards built a sanctuary in their island called Aeaceum, which was a square place enclosed by walls of white marble. Aeacus was believed in later times to be buried under the altar in this sacred enclosure.[16]</p>
-                        </div>
-
+                            });
+                        </script>
                     </div>
-                    <!-- google_ad_section_end -->
 
-                    <pre class="prettyprint"><code>
+                    <a class="scrollbar5button" data-text="0" href="#">Update with tiny text</a>
+                    <a class="scrollbar5button" data-text="1" href="#">Update with middle text</a>
+                    <a class="scrollbar5button" data-text="2" href="#">Update with large text</a>
+                    <a class="scrollbar5button" data-update="relative" data-text="1" href="#">Update with middle text relative to the current text.</a>
+                    <a class="scrollbar5button" data-update="relative" data-text="2" href="#">Update with large text relative to the current text.</a>
+                    <a class="scrollbar5button" data-update="bottom" data-text="1" href="#">Update with middle text and goto bottom.</a>
+                    <a class="scrollbar5button" data-update="bottom" data-text="2" href="#">Update with large text and goto bottom.</a>
+
+                    <div class="scrollbar5text">
+                        <h3>Heracles</h3>
+                        <p>He was the greatest of the Greek heroes, a paragon of masculinity, the ancestor of royal clans who claimed to be Heracleidae and a champion of the Olympian order against chthonic monsters.</p>
+                    </div>
+                    <div class="scrollbar5text">
+                        <h3>Theseus</h3>
+                        <p>Theseus was the mythical founder-king of Athens, son of Aethra, and fathered by Aegeus and Poseidon, both of whom Aethra lay with in one night.</p> <p>Theseus was a founder-hero, like Perseus, Cadmus or Heracles, all of whom battled and overcame foes that were identified with an archaic religious and social order.[1] As Heracles was the Dorian hero, Theseus was the Ionian founding hero, considered by Athenians as their own great reformer. His name comes from the same root as thesmos, Greek for institution.</p> <p>He was responsible for the synoikismos ("dwelling together") the political unification of Attica  under Athens, represented emblematically in his journey of labours, subduing highly localized ogres and monstrous beasts. Because he was the unifying king, Theseus built and occupied a palace on the fortress of the Acropolis that may have been similar to the palace that was excavated in Mycenae. Pausanias reports that after the synoikismos, Theseus established a cult of Aphrodite Pandemos ("Aphrodite of all the People") and Peitho on the southern slope of the Acropolis.</p>
+                    </div>
+                    <div class="scrollbar5text">
+                        <h3>Aeacus</h3>
+                        <p>Aeacus was a mythological king of the island of Aegina in the Saronic Gulf. He was son of Zeus and Aegina, a daughter of the river-god Asopus.[1] He was born in the island of Oenone or Oenopia, to which Aegina had been carried by Zeus to secure her from the anger of her parents, and whence this island was afterwards called Aegina.[2][3][4][5][6] According to some accounts Aeacus was a son of Zeus and Europa. Some traditions related that at the time when Aeacus was born, Aegina was not yet inhabited, and that Zeus changed the ants of the island into men (Myrmidons) over whom Aeacus ruled, or that he made men grow up out of the earth.[2][7][8] Ovid, on the other hand, supposes that the island was not uninhabited at the time of the birth of Aeacus, and states that, in the reign of Aeacus, Hera, jealous of Aegina, ravaged the island bearing the name of the latter by sending a plague or a fearful dragon into it, by which nearly all its inhabitants were carried off, and that Zeus restored the population by changing the ants into men.[9][10][11] These legends are nothing but a mythical account of the colonization of Aegina, which seems to have been originally inhabited by Pelasgians, and afterwards received colonists from Phthiotis, the seat of the Myrmidons, and from Phlius on the Asopus. Aeacus while he reigned in Aegina was renowned in all Greece for his justice and piety, and was frequently called upon to settle disputes not only among men, but even among the gods themselves.[12][13] He was such a favourite with the latter, that, when Greece was visited by a drought in consequence of a murder which had been committed, the oracle of Delphi declared that the calamity would not cease unless Aeacus prayed to the gods that it might.[2][14] Aeacus prayed, and it ceased in consequence. Aeacus himself showed his gratitude by erecting a temple to Zeus Panhellenius on mount Panhellenion,[15] and the Aeginetans afterwards built a sanctuary in their island called Aeaceum, which was a square place enclosed by walls of white marble. Aeacus was believed in later times to be buried under the altar in this sacred enclosure.[16]</p>
+                    </div>
+                </div>
+                <!-- google_ad_section_end -->
+
+                <pre class="prettyprint"><code>
 var $scrollbar5 = $("#scrollbar5");
 $scrollbar5.tinyscrollbar();
 
@@ -333,51 +338,51 @@ setNewContent();
 var scrollbar5 = $scrollbar5.data("plugin_tinyscrollbar")
 scrollbar5.update();
 
-                    </code></pre>
+                </code></pre>
 
-                    <!-- google_ad_section_start(weight=ignore) -->
-                    <div id="scrollbar6">
-                        <div class="scrollbar"><div class="track"><div class="thumb"><div class="end"></div></div></div></div>
-                        <div class="viewport">
-                            <div class="overview" style="top: 0px;">
-                                <h3>Odysseus</h3>
-                                <p>Odysseus was a legendary Greek king of Ithaca and the hero of Homer's epic poem the Odyssey. Odysseus also plays a key role in Homer's Iliad and other works in the Epic Cycle.</p>
-                                <p>King of Ithaca, husband of Penelope, father of Telemachus, and son of Laertes and Anticlea, Odysseus is renowned for his guile and resourcefulness, and is hence known by the epithet Odysseus the Cunning. He is most famous for the ten eventful years he took to return home after the ten-year Trojan War and his famous Trojan Horse trick.</p>
-                                <p>Relatively little is known of Odysseus's background other than that his paternal grandfather (or step-grandfather) is Arcesius, son of Cephalus and grandson of Aeolus, whilst his maternal grandfather is the thief Autolycus, son of Hermes and Chione. According to The Odyssey, his father is Laertes[1] and his mother Anticlea, although there was a non-Homeric tradition[2] that Sisyphus was his true father.[3] Odysseus is said to have a younger sister, Ctimene, who went to Same to be married and is mentioned by the swineherd Eumaeus, whom she grew up alongside, in Book XV of the Odyssey.[4] Ithaca, an island along the Ionian northwestern coastline of Greece, is one of several islands that would have comprised the realm of Odysseus's family, but the true extent of the Cephallenian realm and the actual identities of the islands named in Homer's works are unknown.</p>
+                <!-- google_ad_section_start(weight=ignore) -->
+                <div id="scrollbar6">
+                    <div class="scrollbar"><div class="track"><div class="thumb"><div class="end"></div></div></div></div>
+                    <div class="viewport">
+                        <div class="overview" style="top: 0px;">
+                            <h3>Odysseus</h3>
+                            <p>Odysseus was a legendary Greek king of Ithaca and the hero of Homer's epic poem the Odyssey. Odysseus also plays a key role in Homer's Iliad and other works in the Epic Cycle.</p>
+                            <p>King of Ithaca, husband of Penelope, father of Telemachus, and son of Laertes and Anticlea, Odysseus is renowned for his guile and resourcefulness, and is hence known by the epithet Odysseus the Cunning. He is most famous for the ten eventful years he took to return home after the ten-year Trojan War and his famous Trojan Horse trick.</p>
+                            <p>Relatively little is known of Odysseus's background other than that his paternal grandfather (or step-grandfather) is Arcesius, son of Cephalus and grandson of Aeolus, whilst his maternal grandfather is the thief Autolycus, son of Hermes and Chione. According to The Odyssey, his father is Laertes[1] and his mother Anticlea, although there was a non-Homeric tradition[2] that Sisyphus was his true father.[3] Odysseus is said to have a younger sister, Ctimene, who went to Same to be married and is mentioned by the swineherd Eumaeus, whom she grew up alongside, in Book XV of the Odyssey.[4] Ithaca, an island along the Ionian northwestern coastline of Greece, is one of several islands that would have comprised the realm of Odysseus's family, but the true extent of the Cephallenian realm and the actual identities of the islands named in Homer's works are unknown.</p>
 
-                                <p>Odysseus was a legendary Greek king of Ithaca and the hero of Homer's epic poem the Odyssey. Odysseus also plays a key role in Homer's Iliad and other works in the Epic Cycle.</p>
-                                <p>King of Ithaca, husband of Penelope, father of Telemachus, and son of Laertes and Anticlea, Odysseus is renowned for his guile and resourcefulness, and is hence known by the epithet Odysseus the Cunning. He is most famous for the ten eventful years he took to return home after the ten-year Trojan War and his famous Trojan Horse trick.</p>
-                                <p>Relatively little is known of Odysseus's background other than that his paternal grandfather (or step-grandfather) is Arcesius, son of Cephalus and grandson of Aeolus, whilst his maternal grandfather is the thief Autolycus, son of Hermes and Chione. According to The Odyssey, his father is Laertes[1] and his mother Anticlea, although there was a non-Homeric tradition[2] that Sisyphus was his true father.[3] Odysseus is said to have a younger sister, Ctimene, who went to Same to be married and is mentioned by the swineherd Eumaeus, whom she grew up alongside, in Book XV of the Odyssey.[4] Ithaca, an island along the Ionian northwestern coastline of Greece, is one of several islands that would have comprised the realm of Odysseus's family, but the true extent of the Cephallenian realm and the actual identities of the islands named in Homer's works are unknown.</p>
-                            </div>
+                            <p>Odysseus was a legendary Greek king of Ithaca and the hero of Homer's epic poem the Odyssey. Odysseus also plays a key role in Homer's Iliad and other works in the Epic Cycle.</p>
+                            <p>King of Ithaca, husband of Penelope, father of Telemachus, and son of Laertes and Anticlea, Odysseus is renowned for his guile and resourcefulness, and is hence known by the epithet Odysseus the Cunning. He is most famous for the ten eventful years he took to return home after the ten-year Trojan War and his famous Trojan Horse trick.</p>
+                            <p>Relatively little is known of Odysseus's background other than that his paternal grandfather (or step-grandfather) is Arcesius, son of Cephalus and grandson of Aeolus, whilst his maternal grandfather is the thief Autolycus, son of Hermes and Chione. According to The Odyssey, his father is Laertes[1] and his mother Anticlea, although there was a non-Homeric tradition[2] that Sisyphus was his true father.[3] Odysseus is said to have a younger sister, Ctimene, who went to Same to be married and is mentioned by the swineherd Eumaeus, whom she grew up alongside, in Book XV of the Odyssey.[4] Ithaca, an island along the Ionian northwestern coastline of Greece, is one of several islands that would have comprised the realm of Odysseus's family, but the true extent of the Cephallenian realm and the actual identities of the islands named in Homer's works are unknown.</p>
                         </div>
-
-                        <a class="scrollbar6button" data-anchor="50" href="#">Scroll the content to 50px</a>
-                        <a class="scrollbar6button" data-anchor="200" href="#">Scroll the content to 200px</a>
-                        <a class="scrollbar6button" data-anchor="300" href="#">Scroll the content to 300px</a>
-
-                        <script type="text/javascript">
-                            $(document).ready(function()
-                            {
-                                var $scrollbar6 = $('#scrollbar6');
-
-                                $scrollbar6.tinyscrollbar();
-
-                                var scrollbar6 = $scrollbar6.data("plugin_tinyscrollbar")
-
-                                $(".scrollbar6button").click(function()
-                                {
-                                    var anchorPosition = $(this).attr("data-anchor");
-
-                                    scrollbar6.update(anchorPosition);
-
-                                    return false;
-                                });
-                            });
-                        </script>
                     </div>
-                    <!-- google_ad_section_end -->
 
-                    <pre class="prettyprint"><code>
+                    <a class="scrollbar6button" data-anchor="50" href="#">Scroll the content to 50px</a>
+                    <a class="scrollbar6button" data-anchor="200" href="#">Scroll the content to 200px</a>
+                    <a class="scrollbar6button" data-anchor="300" href="#">Scroll the content to 300px</a>
+
+                    <script type="text/javascript">
+                        $(document).ready(function()
+                        {
+                            var $scrollbar6 = $('#scrollbar6');
+
+                            $scrollbar6.tinyscrollbar();
+
+                            var scrollbar6 = $scrollbar6.data("plugin_tinyscrollbar")
+
+                            $(".scrollbar6button").click(function()
+                            {
+                                var anchorPosition = $(this).attr("data-anchor");
+
+                                scrollbar6.update(anchorPosition);
+
+                                return false;
+                            });
+                        });
+                    </script>
+                </div>
+                <!-- google_ad_section_end -->
+
+                <pre class="prettyprint"><code>
 $(document).ready(function()
 {
     // You can use the update method to build a anchor.
@@ -397,43 +402,47 @@ $(document).ready(function()
         return false;
     });
 });
-                    </code></pre>
-                    <div class="block advert">
-                        <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
-                        <!-- Responsive -->
-                        <ins class="adsbygoogle"
-                             style="display:block"
-                             data-ad-client="ca-pub-6364750078473156"
-                             data-ad-slot="7734741654"
-                             data-ad-format="auto"></ins>
-                        <script>
-                        (adsbygoogle = window.adsbygoogle || []).push({});
-                        </script>
-                    </div>
+                </code></pre>
+            </section>
 
-                    <h2>FAQ</h2>
-                    <ul class="list">
-                        <li>The thumb is slightly larger then the background image this is for easier scrolling on mobile devices.</li>
-                        <li>When you seem to be missing part of the content. Please make sure all the images have a height and width defined.</li>
-                        <li>Use the update method on content changes! It's your friend ;)</li>
-                        <li>If your scrollbar + content is on display: none; at page load. Use the update method to enable the scrollbar when its content is visible again.</li>
-                    </ul>
+            <section class="block">
+                <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+                <!-- Responsive -->
+                <ins class="adsbygoogle"
+                     style="display:block"
+                     data-ad-client="ca-pub-6364750078473156"
+                     data-ad-slot="7734741654"
+                     data-ad-format="auto"></ins>
+                <script>
+                (adsbygoogle = window.adsbygoogle || []).push({});
+                </script>
+            </section>
 
-                    <h2>Initialize options</h2>
-                    <p>A list of all the available options and there default value</p>
-                    <ul class="list">
-                        <li><strong>axis: 'y'</strong> -- Vertical or horizontal scroller? 'x' or 'y'.</li>
-                        <li><strong>wheelSpeed: 40</strong> -- How many pixels must the mouswheel scrolls at a time.</li>
-                        <li><strong>wheel: true</strong> -- Enable or disable the mousewheel.</li>
-                        <li><strong>wheelLock: true</strong> -- Return scrollwheel event to browser if there is no more content.</li>
-                        <li><strong>trackSize: false</strong> -- Set the size of the scrollbar to auto(false) or a fixed number.</li>
-                        <li><strong>thumbSize: false</strong> -- Set the size of the thumb to auto(false) or a fixed number.</li>
-                        <li><strong>scrollInvert: false</strong> -- Inverts the direction of scrolling.</li>
-                    </ul>
+            <section class="block">
 
-                    <h2>Properties</h2>
+                <h2>FAQ</h2>
+                <ul class="list">
+                    <li>The thumb is slightly larger then the background image this is for easier scrolling on mobile devices.</li>
+                    <li>When you seem to be missing part of the content. Please make sure all the images have a height and width defined.</li>
+                    <li>Use the update method on content changes! It's your friend ;)</li>
+                    <li>If your scrollbar + content is on display: none; at page load. Use the update method to enable the scrollbar when its content is visible again.</li>
+                </ul>
 
-                    <pre class="prettyprint"><code>
+                <h2>Initialize options</h2>
+                <p>A list of all the available options and there default value</p>
+                <ul class="list">
+                    <li><strong>axis: 'y'</strong> -- Vertical or horizontal scroller? 'x' or 'y'.</li>
+                    <li><strong>wheelSpeed: 40</strong> -- How many pixels must the mouswheel scrolls at a time.</li>
+                    <li><strong>wheel: true</strong> -- Enable or disable the mousewheel.</li>
+                    <li><strong>wheelLock: true</strong> -- toggle what todo when there is no more content left to scroll. When true it will do nothing. When false it will continue with scrolling the window.</li>
+                    <li><strong>trackSize: false</strong> -- Set the size of the scrollbar to auto(false) or a fixed number.</li>
+                    <li><strong>thumbSize: false</strong> -- Set the size of the thumb to auto(false) or a fixed number.</li>
+                    <li><strong>scrollInvert: false</strong> -- Inverts the direction of scrolling.</li>
+                </ul>
+
+                <h2>Properties</h2>
+
+                <pre class="prettyprint"><code>
 $(document).ready(function()
 {
     // You can access the methods and properties of your
@@ -453,26 +462,26 @@ $(document).ready(function()
     //
     // etc..
 });
-                    </code></pre>
+                </code></pre>
 
 
-                    <ul class="list">
-                        <li><strong>contentPosition</strong> -- Position of the content.</li>
-                        <li><strong>viewportSize</strong> -- Size of the viewport elment.</li>
-                        <li><strong>contentRatio</strong> -- Content size to viewport size ratio.</li>
-                        <li><strong>trackSize</strong> -- Size of the scrollbar track.</li>
-                        <li><strong>trackRatio</strong> -- Track size to thumb size ratio.</li>
-                        <li><strong>thumbSize</strong> -- Size of the scrollbar thumb.</li>
-                        <li><strong>thumbPosition</strong> -- Position of the thumb</li>
-                    </ul>
+                <ul class="list">
+                    <li><strong>contentPosition</strong> -- Position of the content.</li>
+                    <li><strong>viewportSize</strong> -- Size of the viewport elment.</li>
+                    <li><strong>contentRatio</strong> -- Content size to viewport size ratio.</li>
+                    <li><strong>trackSize</strong> -- Size of the scrollbar track.</li>
+                    <li><strong>trackRatio</strong> -- Track size to thumb size ratio.</li>
+                    <li><strong>thumbSize</strong> -- Size of the scrollbar thumb.</li>
+                    <li><strong>thumbPosition</strong> -- Position of the thumb</li>
+                </ul>
 
-                    <h2>Methods</h2>
-                    <ul class="list">
-                        <li><strong>update</strong> -- You can use the update method to adjust the scrollbar to new content or to move the scrollbar to a certain point. It takes 1 parameter a number in pixels or the values "relative" or "bottom". If you dont specify a paramater it will default to top.</li>
-                    </ul>
+                <h2>Methods</h2>
+                <ul class="list">
+                    <li><strong>update</strong> -- You can use the update method to adjust the scrollbar to new content or to move the scrollbar to a certain point. It takes 1 parameter a number in pixels or the values "relative" or "bottom". If you dont specify a paramater it will default to top.</li>
+                </ul>
 
-                    <h2>Events</h2>
-                    <pre class="prettyprint"><code>
+                <h2>Events</h2>
+                <pre class="prettyprint"><code>
 $(document).ready(function()
 {
     var $box = $('#box');
@@ -483,65 +492,50 @@ $(document).ready(function()
         console.log("do something on every move");
     });
 });
-                    </code></pre>
+                </code></pre>
 
-
-                    <ul class="list">
-                        <li><strong>move</strong> -- The move event will trigger on every drag or scroll.</li>
-                    </ul>
-
-                </div>
-
-            </section>
-            <!-- CLOSE COLUMN MAIN -->
-
-            <section id="col-right">
-                <ul class="block-menu">
-                    <li><a href="/">Home</a></li>
-                    <li><a href="../tinycarousel">Tiny Carousel</a></li>
-                    <li><a href="../tinyscrollbar" class="active">Tiny Scrollbar</a></li>
-                    <li><a href="../tinycircleslider">Tiny Circleslider</a></li>
-                    <li><a href="../tinycolorpicker">Tiny Colorpicker</a></li>
+                <ul class="list">
+                    <li><strong>move</strong> -- The move event will trigger on every drag or scroll.</li>
                 </ul>
+            </section>
+        </article>
 
-                <div class="block advert">
-                    <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
-                    <!-- Responsive2 -->
-                    <ins class="adsbygoogle"
-                         style="display:block"
-                         data-ad-client="ca-pub-6364750078473156"
-                         data-ad-slot="6807908455"
-                         data-ad-format="auto"></ins>
-                    <script>
-                    (adsbygoogle = window.adsbygoogle || []).push({});
-                    </script>
-                </div>
+        <aside id="col-right">
 
-                <div class="block">
-                    <h2>License / Source</h2>
-
-                    <p>Tinyscrollbar is a free script its licensed under the MIT license. However a donation for my labor of love is greatly appreciated :) </p>
-                    <p><form action="https://www.paypal.com/cgi-bin/webscr" method="post" class="beer">
-                        <input type="hidden" name="cmd" value="_s-xclick">
-                        <input type="hidden" name="encrypted" value="-----BEGIN PKCS7-----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-----END PKCS7-----">
-                        <input type="image" src="https://www.paypal.com/en_US/i/btn/btn_donate_LG.gif" name="submit" alt="PayPal - The safer, easier way to pay online!">
-                        <img alt="" src="https://www.paypal.com/nl_NL/i/scr/pixel.gif" width="1" height="1" />
-                    </form></p>
-                    <p>The latest source is available on <a href="https://github.com/wieringen/tinyscrollbar">GitHub</a>.</p>
-
-                </div>
-
-                <div class="block">
-                    <h2>Support</h2>
-                    <p> For a small fee I can help you implement the script in your project. Missing any features? I can build them for you <span id="mcon"></span></p>
-                </div>
-
+            <section class="block">
+                <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+                <!-- Responsive2 -->
+                <ins class="adsbygoogle"
+                     style="display:block"
+                     data-ad-client="ca-pub-6364750078473156"
+                     data-ad-slot="6807908455"
+                     data-ad-format="auto"></ins>
+                <script>
+                (adsbygoogle = window.adsbygoogle || []).push({});
+                </script>
             </section>
 
-            <footer class="footer">&copy; <a href="/">Maarten Baijs</a> 2009-2014</footer>
-        </div>
+            <section class="block">
+                <h2>License / Source</h2>
+
+                <p>Tinyscrollbar is a free script its licensed under the MIT license. However a donation for my labor of love is greatly appreciated :) </p>
+                <p><form action="https://www.paypal.com/cgi-bin/webscr" method="post" class="beer">
+                    <input type="hidden" name="cmd" value="_s-xclick">
+                    <input type="hidden" name="encrypted" value="-----BEGIN PKCS7-----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-----END PKCS7-----">
+                    <input type="image" src="https://www.paypal.com/en_US/i/btn/btn_donate_LG.gif" name="submit" alt="PayPal - The safer, easier way to pay online!">
+                    <img alt="" src="https://www.paypal.com/nl_NL/i/scr/pixel.gif" width="1" height="1" />
+                </form></p>
+                <p>The latest source is available on <a href="https://github.com/wieringen/tinyscrollbar">GitHub</a>.</p>
+            </section>
+
+            <section class="block">
+                <h2>Support</h2>
+                <p> For a small fee I can help you implement the script in your project. Missing any features? I can build them for you <span id="mcon"></span></p>
+            </section>
+        </aside>
+
+        <footer id="footer">&copy; <a href="/">Maarten Baijs</a> 2009-2014</footer>
     </div>
-    <!-- CLOSE WRAPPER -->
 
     <script type="text/javascript">
 
