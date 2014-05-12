@@ -1,5 +1,6 @@
 .DS_Store
 .ftppass
+.idea
 dist/
 node_modules/
 *.sublime-project
