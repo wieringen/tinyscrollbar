@@ -22,13 +22,13 @@
   "licenses": [
     {
       "type": "MIT",
-      "url": "https://github.com/wieringen/tinscrollbar/blob/master/MIT-LICENSE.txt"
+      "url": "https://github.com/wieringen/tinyscrollbar/blob/master/MIT-LICENSE.txt"
     }
   ],
-  "bugs": "https://github.com/wieringen/tinscrollbar/issues",
-  "download": "http://baijs.com/tinscrollbar/",
-  "demo" : "http://baijs.com/tinscrollbar/",
-  "docs" : "http://baijs.com/tinscrollbar/",
+  "bugs": "https://github.com/wieringen/tinyscrollbar/issues",
+  "download": "http://baijs.com/tinyscrollbar/",
+  "demo" : "http://baijs.com/tinyscrollbar/",
+  "docs" : "http://baijs.com/tinyscrollbar/",
   "dependencies": {
     "jquery": ">=1.5"
   }
