@@ -28,6 +28,7 @@
 #scrollbar1 .scrollbar
 {
     background:transparent url(../images/bg-scrollbar-track-y.png) no-repeat 0 0;
+    background-size: 100% 100%;
     position:absolute;
     top:0;
     right:0;
