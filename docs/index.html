@@ -438,6 +438,7 @@ $(document).ready(function()
                     <li><strong>trackSize: false</strong> -- Set the size of the scrollbar to auto(false) or a fixed number.</li>
                     <li><strong>thumbSize: false</strong> -- Set the size of the thumb to auto(false) or a fixed number.</li>
                     <li><strong>scrollInvert: false</strong> -- Inverts the direction of scrolling.</li>
+                    <li><strong>moveStopThreshold: 300</strong> -- Number of milliseconds without any 'move' event to trigger the 'movestop' event.</li>
                 </ul>
 
                 <h2>Properties</h2>
@@ -496,6 +497,8 @@ $(document).ready(function()
 
                 <ul class="list">
                     <li><strong>move</strong> -- The move event will trigger on every drag or scroll.</li>
+                    <li><strong>movestart</strong> -- The move event will trigger on every drag or scroll start.</li>
+                    <li><strong>movestop</strong> -- The move event will trigger on every drag or scroll end.</li>
                 </ul>
             </section>
         </article>
