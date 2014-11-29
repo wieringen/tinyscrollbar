@@ -29,7 +29,7 @@
     "url": "https://github.com/wieringen/tinyscrollbar/issues"
   },
   "devDependencies": {
-    "grunt": "~0.4.1",
+    "grunt": "latest",
     "grunt-contrib-copy": "~0.4.1",
     "grunt-contrib-clean": "~0.5.0",
     "grunt-contrib-uglify": "~0.2.7",
