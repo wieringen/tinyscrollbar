@@ -16,7 +16,7 @@ In order to build tinyscrollbar, you need to have Node.js/npm, and git 1.7 or la
 How to build your own tinyscrollbar
 ----------------------------
 
-First, clone a copy of the main imageCreator git repo by running:
+First, clone a copy of the main tinyscrollbar git repo by running:
 
 ```bash
 git clone git://github.com/wieringen/tinyscrollbar.git
