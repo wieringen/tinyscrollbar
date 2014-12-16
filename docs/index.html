@@ -303,14 +303,6 @@ $(document).ready(function()
                         </script>
                     </div>
 
-                    <a class="scrollbar5button" data-text="0" href="#">Update with tiny text</a>
-                    <a class="scrollbar5button" data-text="1" href="#">Update with middle text</a>
-                    <a class="scrollbar5button" data-text="2" href="#">Update with large text</a>
-                    <a class="scrollbar5button" data-update="relative" data-text="1" href="#">Update with middle text relative to the current text.</a>
-                    <a class="scrollbar5button" data-update="relative" data-text="2" href="#">Update with large text relative to the current text.</a>
-                    <a class="scrollbar5button" data-update="bottom" data-text="1" href="#">Update with middle text and goto bottom.</a>
-                    <a class="scrollbar5button" data-update="bottom" data-text="2" href="#">Update with large text and goto bottom.</a>
-
                     <div class="scrollbar5text">
                         <h3>Heracles</h3>
                         <p>He was the greatest of the Greek heroes, a paragon of masculinity, the ancestor of royal clans who claimed to be Heracleidae and a champion of the Olympian order against chthonic monsters.</p>
@@ -324,6 +316,13 @@ $(document).ready(function()
                         <p>Aeacus was a mythological king of the island of Aegina in the Saronic Gulf. He was son of Zeus and Aegina, a daughter of the river-god Asopus.[1] He was born in the island of Oenone or Oenopia, to which Aegina had been carried by Zeus to secure her from the anger of her parents, and whence this island was afterwards called Aegina.[2][3][4][5][6] According to some accounts Aeacus was a son of Zeus and Europa. Some traditions related that at the time when Aeacus was born, Aegina was not yet inhabited, and that Zeus changed the ants of the island into men (Myrmidons) over whom Aeacus ruled, or that he made men grow up out of the earth.[2][7][8] Ovid, on the other hand, supposes that the island was not uninhabited at the time of the birth of Aeacus, and states that, in the reign of Aeacus, Hera, jealous of Aegina, ravaged the island bearing the name of the latter by sending a plague or a fearful dragon into it, by which nearly all its inhabitants were carried off, and that Zeus restored the population by changing the ants into men.[9][10][11] These legends are nothing but a mythical account of the colonization of Aegina, which seems to have been originally inhabited by Pelasgians, and afterwards received colonists from Phthiotis, the seat of the Myrmidons, and from Phlius on the Asopus. Aeacus while he reigned in Aegina was renowned in all Greece for his justice and piety, and was frequently called upon to settle disputes not only among men, but even among the gods themselves.[12][13] He was such a favourite with the latter, that, when Greece was visited by a drought in consequence of a murder which had been committed, the oracle of Delphi declared that the calamity would not cease unless Aeacus prayed to the gods that it might.[2][14] Aeacus prayed, and it ceased in consequence. Aeacus himself showed his gratitude by erecting a temple to Zeus Panhellenius on mount Panhellenion,[15] and the Aeginetans afterwards built a sanctuary in their island called Aeaceum, which was a square place enclosed by walls of white marble. Aeacus was believed in later times to be buried under the altar in this sacred enclosure.[16]</p>
                     </div>
                 </div>
+                <a class="scrollbar5button" data-text="0" href="#">Update with tiny text</a>
+                <a class="scrollbar5button" data-text="1" href="#">Update with middle text</a>
+                <a class="scrollbar5button" data-text="2" href="#">Update with large text</a>
+                <a class="scrollbar5button" data-update="relative" data-text="1" href="#">Update with middle text relative to the current text.</a>
+                <a class="scrollbar5button" data-update="relative" data-text="2" href="#">Update with large text relative to the current text.</a>
+                <a class="scrollbar5button" data-update="bottom" data-text="1" href="#">Update with middle text and goto bottom.</a>
+                <a class="scrollbar5button" data-update="bottom" data-text="2" href="#">Update with large text and goto bottom.</a>
                 <!-- google_ad_section_end -->
 
                 <pre class="prettyprint"><code>
@@ -358,31 +357,31 @@ scrollbar5.update();
                             <p>Relatively little is known of Odysseus's background other than that his paternal grandfather (or step-grandfather) is Arcesius, son of Cephalus and grandson of Aeolus, whilst his maternal grandfather is the thief Autolycus, son of Hermes and Chione. According to The Odyssey, his father is Laertes[1] and his mother Anticlea, although there was a non-Homeric tradition[2] that Sisyphus was his true father.[3] Odysseus is said to have a younger sister, Ctimene, who went to Same to be married and is mentioned by the swineherd Eumaeus, whom she grew up alongside, in Book XV of the Odyssey.[4] Ithaca, an island along the Ionian northwestern coastline of Greece, is one of several islands that would have comprised the realm of Odysseus's family, but the true extent of the Cephallenian realm and the actual identities of the islands named in Homer's works are unknown.</p>
                         </div>
                     </div>
-
-                    <a class="scrollbar6button" data-anchor="50" href="#">Scroll the content to 50px</a>
-                    <a class="scrollbar6button" data-anchor="200" href="#">Scroll the content to 200px</a>
-                    <a class="scrollbar6button" data-anchor="300" href="#">Scroll the content to 300px</a>
-
-                    <script type="text/javascript">
-                        $(document).ready(function()
-                        {
-                            var $scrollbar6 = $('#scrollbar6');
-
-                            $scrollbar6.tinyscrollbar();
-
-                            var scrollbar6 = $scrollbar6.data("plugin_tinyscrollbar")
-
-                            $(".scrollbar6button").click(function()
-                            {
-                                var anchorPosition = $(this).attr("data-anchor");
-
-                                scrollbar6.update(anchorPosition);
-
-                                return false;
-                            });
-                        });
-                    </script>
                 </div>
+                <a class="scrollbar6button" data-anchor="50" href="#">Scroll the content to 50px</a>
+                <a class="scrollbar6button" data-anchor="200" href="#">Scroll the content to 200px</a>
+                <a class="scrollbar6button" data-anchor="300" href="#">Scroll the content to 300px</a>
+
+                <script type="text/javascript">
+                    $(document).ready(function()
+                    {
+                        var $scrollbar6 = $('#scrollbar6');
+
+                        $scrollbar6.tinyscrollbar();
+
+                        var scrollbar6 = $scrollbar6.data("plugin_tinyscrollbar")
+
+                        $(".scrollbar6button").click(function()
+                        {
+                            var anchorPosition = $(this).attr("data-anchor");
+
+                            scrollbar6.update(anchorPosition);
+
+                            return false;
+                        });
+                    });
+                </script>
+
                 <!-- google_ad_section_end -->
 
                 <pre class="prettyprint"><code>
@@ -437,7 +436,8 @@ $(document).ready(function()
                     <li><strong>axis: 'y'</strong> -- Vertical or horizontal scroller? 'x' or 'y'.</li>
                     <li><strong>wheelSpeed: 40</strong> -- How many pixels must the mouswheel scrolls at a time.</li>
                     <li><strong>wheel: true</strong> -- Enable or disable the mousewheel.</li>
-                    <li><strong>wheelLock: true</strong> -- toggle what todo when there is no more content left to scroll. When true it will do nothing. When false it will continue with scrolling the window.</li>
+                    <li><strong>wheelLock: true</strong> -- Lock default window wheel scrolling when there is no more content to scroll.</li>
+                    <li><strong>touchLock: true</strong> -- Lock default window touch scrolling when there is no more content to scroll.</li>
                     <li><strong>trackSize: false</strong> -- Set the size of the scrollbar to auto(false) or a fixed number.</li>
                     <li><strong>thumbSize: false</strong> -- Set the size of the thumb to auto(false) or a fixed number.</li>
                     <li><strong>scrollInvert: false</strong> -- Inverts the direction of scrolling.</li>
