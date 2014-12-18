@@ -1,4 +1,4 @@
-[tinyscrollbar](http://baijs.com/tinyscrollbar)[![Build Status](https://secure.travis-ci.org/wieringen/tinyscrollbar.png?branch=master)](http://travis-ci.org/wieringen/tinyscrollbar)[![NPM version](https://badge.fury.io/js/tinyscrollbar.png)](http://badge.fury.io/js/tinyscrollbar)[![Built with Grunt](https://cdn.gruntjs.com/builtwith.png)](http://gruntjs.com/)
+[tinyscrollbar](http://baijs.com/tinyscrollbar) [![Build Status](https://secure.travis-ci.org/wieringen/tinyscrollbar.png?branch=master)](http://travis-ci.org/wieringen/tinyscrollbar) [![NPM version](https://badge.fury.io/js/tinyscrollbar.png)](http://badge.fury.io/js/tinyscrollbar) [![Built with Grunt](https://cdn.gruntjs.com/builtwith.png)](http://gruntjs.com/)
 ==================================================
 
 Environments in which to use tinyscrollbar
