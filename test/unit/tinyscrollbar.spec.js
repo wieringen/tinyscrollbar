@@ -1,4 +1,4 @@
-jasmine.getFixtures().fixturesPath = "test/fixtures";
+/*jasmine.getFixtures().fixturesPath = "test/fixtures";
 
 describe("tinyscrollbar", function ()
 {
@@ -41,4 +41,20 @@ describe("tinyscrollbar", function ()
         expect($container1).toHaveClass("test");
     });
 
+});
+*/
+
+
+describe('A single Tinyscrollbar', function() {
+    before(function () {
+        document.head.innerHTML = __html__['test/fixtures/tinyscrollbar-css.html'];
+    });
+
+    beforeEach(function () {
+        document.body.innerHTML = __html__['test/fixtures/tinyscrollbar.html'];
+    });
+
+    afterEach(function () {
+        document.body.innerHTML = '';
+    });
 });

@@ -437,82 +437,41 @@ $(document).ready(function()
             </section>
 
             <section class="block">
+                <h2>Usage</h2>
+                <pre class="prettyprint"><code>
+$(document).ready(function()
+{
+    // Initialize a scrollbar like this.
+    //
+    $('#box').tinyscrollbar();
+
+    // Try this to get access to the actual scrollbar instance.
+    //
+    var box = $('#box').data("plugin_tinyscrollbar");
+
+    // Now you have access to all the methods and properties.
+    //
+    // box.update();
+    // console.log(box.contentPosition);
+    //
+    // etc..
+
+    // You can bind to the move event like this.
+    //
+    $box.bind("move", function()
+    {
+        console.log("do something on every move.");
+    });
+});
+                </code></pre>
+            </section>
+
+            <section class="block">
                 <h2>FAQ</h2>
                 <ul class="list">
                     <li>When you seem to be missing part of the content. Please make sure all the images have a height and width defined.</li>
                     <li>Use the update method on content changes! It's your friend ;)</li>
                     <li>If your scrollbar + content is on display: none; at page load. Use the update method to enable the scrollbar when its content is visible again.</li>
-                </ul>
-
-                <h2>Initialize options</h2>
-                <p>A list of all the available options and there default value</p>
-                <ul class="list">
-                    <li><strong>axis: 'y'</strong> -- Vertical or horizontal scroller? 'x' or 'y'.</li>
-                    <li><strong>wheelSpeed: 40</strong> -- How many pixels must the mouswheel scrolls at a time.</li>
-                    <li><strong>wheel: true</strong> -- Enable or disable the mousewheel.</li>
-                    <li><strong>wheelLock: true</strong> -- Lock default window wheel scrolling when there is no more content to scroll.</li>
-                    <li><strong>touchLock: true</strong> -- Lock default window touch scrolling when there is no more content to scroll.</li>
-                    <li><strong>trackSize: false</strong> -- Set the size of the scrollbar to auto(false) or a fixed number.</li>
-                    <li><strong>thumbSize: false</strong> -- Set the size of the thumb to auto(false) or a fixed number.</li>
-                    <li><strong>thumbSizeMin: 20</strong> -- Set the minimum size of the thumb.</li>
-                </ul>
-
-                <h2>Properties</h2>
-
-                <pre class="prettyprint"><code>
-$(document).ready(function()
-{
-    // You can access the methods and properties of your
-    // scrollbar instance straight after initialization.
-    //
-    $('#box').tinyscrollbar();
-
-    // This part you can do from whatever place in your
-    // code as long as the scrollbar allready is initialized.
-    //
-    var box = $('#box').data("plugin_tinyscrollbar")
-
-    // Now you have access to all the methods and properties.
-    //
-    // box.update()
-    // console.log(box.contentPosition)
-    //
-    // etc..
-});
-                </code></pre>
-
-
-                <ul class="list">
-                    <li><strong>contentPosition</strong> -- Position of the content.</li>
-                    <li><strong>viewportSize</strong> -- Size of the viewport elment.</li>
-                    <li><strong>contentRatio</strong> -- Content size to viewport size ratio.</li>
-                    <li><strong>trackSize</strong> -- Size of the scrollbar track.</li>
-                    <li><strong>trackRatio</strong> -- Track size to thumb size ratio.</li>
-                    <li><strong>thumbSize</strong> -- Size of the scrollbar thumb.</li>
-                    <li><strong>thumbPosition</strong> -- Position of the thumb</li>
-                </ul>
-
-                <h2>Methods</h2>
-                <ul class="list">
-                    <li><strong>update</strong> -- You can use the update method to adjust the scrollbar to new content or to move the scrollbar to a certain point. It takes 1 parameter a number in pixels or the values "relative" or "bottom". If you dont specify a parameter it will default to top.</li>
-                </ul>
-
-                <h2>Events</h2>
-                <pre class="prettyprint"><code>
-$(document).ready(function()
-{
-    var $box = $('#box');
-    var box  = $box.tinyscrollbar();
-
-    $box.bind("move", function()
-    {
-        console.log("do something on every move");
-    });
-});
-                </code></pre>
-
-                <ul class="list">
-                    <li><strong>move</strong> -- The move event will trigger on every drag or scroll.</li>
                 </ul>
             </section>
         </article>

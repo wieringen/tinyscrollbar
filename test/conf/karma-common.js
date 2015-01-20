@@ -16,9 +16,10 @@ module.exports = {
 
     // list of files / patterns to load in the browser
     files: [
-
-        'lib/jquery.tinycarousel.js',
-        'test/unit/jquery.tinycarousel.spec.js',
+        'lib/tinyscrollbar.js',
+        'lib/jquery.tinyscrollbar.js',
+        'test/unit/jquery.tinyscrollbar.spec.js',
+        'test/unit/tinyscrollbar.spec.js',
         {
             pattern: 'test/fixtures/**/*.html',
             included: true
