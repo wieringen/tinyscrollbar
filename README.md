@@ -1,4 +1,4 @@
-[tinyscrollbar](http://baijs.com/tinyscrollbar) [![Build Status](https://secure.travis-ci.org/wieringen/tinyscrollbar.png?branch=master)](http://travis-ci.org/wieringen/tinyscrollbar) [![NPM version](https://badge.fury.io/js/tinyscrollbar.png)](http://badge.fury.io/js/tinyscrollbar) [![Built with Grunt](https://cdn.gruntjs.com/builtwith.png)](http://gruntjs.com/)
+[tinyscrollbar](http://baijs.com/tinyscrollbar) [![Build Status][travis-image]][travis-url] [![Coverage Status][coveralls-image]][coveralls-url] [![NPM version][npm-image]][npm-url]
 ==================================================
 
 Environments in which to use tinyscrollbar
@@ -53,5 +53,14 @@ Questions?
 ----------
 
 If you have any questions, please feel free to email [me](mailto:wieringen@gmail.com).
+
+[travis-image]: https://travis-ci.org/wieringen/tinyscrollbar.svg?branch=master
+[travis-url]: https://travis-ci.org/wieringen/tinyscrollbar
+
+[coveralls-image]: https://img.shields.io/coveralls/wieringen/tinyscrollbar/master.svg
+[coveralls-url]: https://coveralls.io/r/wieringen/tinyscrollbar?branch=master
+
+[npm-image]: https://badge.fury.io/js/tinyscrollbar.png
+[npm-url]: http://badge.fury.io/js/tinyscrollbar
 
 

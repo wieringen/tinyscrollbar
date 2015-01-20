@@ -11,25 +11,35 @@
         <meta name="viewport" content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, target-densitydpi=device-dpi" />
 
         <link href='//fonts.googleapis.com/css?family=PT+Sans' rel='stylesheet' type='text/css'>
+        <!-- build:[href] css/ -->
         <link rel="stylesheet" href="../node_modules/baijs/css/website.css" type="text/css" media="screen"/>
+        <!-- /build -->
         <link rel="stylesheet" href="css/tinyscrollbar.css" type="text/css" media="screen"/>
 
         <!--[if lte IE 8]>
             <script type="text/javascript" src="http://cdnjs.cloudflare.com/ajax/libs/html5shiv/3.6/html5shiv.min.js"></script>
         <![endif]-->
 
+        <!-- build:[href] css/ -->
         <!--[if lte IE 7]>
             <link rel="stylesheet" href="../node_modules/baijs/css/website_ie.css" type="text/css" media="screen"/>
         <![endif]-->
+        <!-- /build -->
 
-        <script type="text/javascript" src="https://code.jquery.com/jquery-latest.min.js"></script>
+        <!--[if lte IE 5]>
+            <script type="text/javascript"> function handleError() { return true; } window.onerror = handleError; </script>
+        <![endif]-->
 
-        <!-- Add tinyscrollbar JS -->
+        <script type="text/javascript" src="//code.jquery.com/jquery-latest.min.js"></script>
+        <!-- build:[src] js/ -->
         <script type="text/javascript" src="../lib/jquery.tinyscrollbar.js"></script>
+        <!-- /build -->
 
         <!-- Next files are only for this website! -->
+        <!-- build:[src] js/ -->
         <script type="text/javascript" src="../node_modules/baijs/js/prettify.js"></script>
         <script type="text/javascript" src="../node_modules/baijs/js/website.js"></script>
+        <!-- /build -->
         <script type="text/javascript">window.google_analytics_uacct = "UA-4459599-4";</script>
     </head>
 
@@ -42,7 +52,7 @@
             <span class="slogan">A crossbrowser lightweight Javascript / jQuery scrollbar.</span>
 
            <section class="download">
-                <a href="tinyscrollbar-@@bnr@@.zip" class="btn">Download v@@bnr@@</a>
+                <a href="tinyscrollbar-<%= version %>.zip" class="btn">Download v<%= version %></a>
                 <p>The latest source is available on <a href="https://github.com/wieringen/tinyscrollbar">GitHub</a>.</p>
             </section>
         </header>
@@ -421,7 +431,12 @@ $(document).ready(function()
             </section>
 
             <section class="block">
+                <!-- build:include ../../docs/technical/generated/classes/tinyscrollbar.html -->
+                <p>The generated API docs will be included here.</p>
+                <!-- /build -->
+            </section>
 
+            <section class="block">
                 <h2>FAQ</h2>
                 <ul class="list">
                     <li>When you seem to be missing part of the content. Please make sure all the images have a height and width defined.</li>

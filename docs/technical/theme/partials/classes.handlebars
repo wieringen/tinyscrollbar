@@ -1,0 +1,127 @@
+{{#is_constructor}}
+    <h2>Constructor</h2>
+    <table class="constructor">
+        <tr>
+            <td>
+                <strong>{{name}}
+                {{#if params}}
+                    (
+                    {{#params}}
+                        {{#if optional}}
+                            <span class="optional">[{{name}}{{#if optdefault}}={{optdefault}}{{/if}}]</span>
+                        {{else}}
+                            <span>{{name}}</span>
+                        {{/if}}
+                    {{/params}}
+                    )</span>
+                {{else}}
+                    ()
+                {{/if}}
+                </strong>
+
+                {{#if params}}
+                    <ul class="params-list list">
+                    {{#params}}
+                        <li class="param">
+                            {{#if optional}}
+                                <strong class="param-name optional">{{name}}{{#if optdefault}} = {{optdefault}}{{/if}}</strong>
+                                <span class="type">{{#crossLink type}}{{/crossLink}}</span>
+                                <span class="flag optional" title="This parameter is optional.">optional</span>
+                            {{else}}
+                                <span class="param-name">{{name}}</span>
+                                <span class="type">{{#crossLink type}}{{/crossLink}}</span>
+                            {{/if}}
+
+                            {{#if multiple}}
+                                <span class="flag multiple" title="This argument may occur one or more times.">multiple</span>
+                            {{/if}}
+
+                            <div class="param-description">
+                                {{{description}}}
+                            </div>
+
+                            {{#if props}}
+                                <ul class="params-list list">
+                                    {{#props}}
+                                    <li class="param">
+                                        {{#if optional}}
+                                            <strong class="param-name optional">{{name}}{{#if optdefault}} = {{optdefault}}{{/if}}</strong>
+                                            <span class="type">{{#crossLink type}}{{/crossLink}}</span>
+                                            <span class="flag optional" title="This parameter is optional.">optional</span>
+                                        {{else}}
+                                            <span class="param-name">{{name}}</span>
+                                            <span class="type">{{#crossLink type}}{{/crossLink}}</span>
+                                        {{/if}}
+
+                                        <div class="param-description">
+                                            {{{description}}}
+                                        </div>
+
+                                        {{#if props}}
+                                            <ul class="params-list list">
+                                                {{#props}}
+                                                <li class="param">
+                                                    {{#if optional}}
+                                                        <strong class="param-name optional">{{name}}{{#if optdefault}} = {{optdefault}}{{/if}}</strong>
+                                                        <span class="type">{{#crossLink type}}{{/crossLink}}</span>
+                                                        <span class="flag optional" title="This parameter is optional.">optional</span>
+                                                    {{else}}
+                                                        <strong class="param-name">{{name}}</strong>
+                                                        <span class="type">{{#crossLink type}}{{/crossLink}}</span>
+                                                    {{/if}}
+
+                                                    <div class="param-description">
+                                                        {{{description}}}
+                                                    </div>
+                                                </li>
+                                                {{/props}}
+                                            </ul>
+                                        {{/if}}
+                                    </li>
+                                    {{/props}}
+                                </ul>
+                            {{/if}}
+                        </li>
+                    {{/params}}
+                    </ul>
+                {{/if}}
+            </td>
+        </tr>
+    </table>
+{{/is_constructor}}
+
+{{#if properties}}
+    <h2>Properties</h2>
+    <table>
+        {{#properties}}
+            {{>props}}
+        {{/properties}}
+    </table>
+{{/if}}
+
+{{#if attrs}}
+    <h2>Attributes</h2>
+    <table>
+        {{#attrs}}
+            {{>attrs}}
+        {{/attrs}}
+    </table>
+{{/if}}
+
+{{#if methods}}
+    <h2>Methods</h2>
+    <table>
+        {{#methods}}
+            {{>method}}
+        {{/methods}}
+    </table>
+{{/if}}
+
+{{#if events}}
+    <h2>Events</h2>
+    <table>
+        {{#events}}
+            {{>events}}
+        {{/events}}
+    </table>
+{{/if}}

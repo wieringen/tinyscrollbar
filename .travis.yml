@@ -2,4 +2,15 @@ language: node_js
 node_js:
   - 0.10
 before_script:
+  - export CHROME_BIN=chromium-browser
+  - export DISPLAY=:99.0
+  - sh -e /etc/init.d/xvfb start
   - npm install -g grunt-cli
+env:
+  global:
+    - secure: h/UQzq/D5P/fmZRCTNdJt5LrKjCNSEKY+nTfgnzXk3yt5bIvVVxkOLsWo8dmb7JWKHhS/UJrwzmrFNCNh2DH8Zm/ffkW505Z4tH3f6tZjEoQ0nSVyuumsJ7I7rEQ0Y7e2nGE+2X8FY54JIe+hM2mUdA87OLV8XL8pcYpQDO/I7s=
+    - secure: GJCmrqpUEkbAJ8/BfWvh8bGhGH8By1lOCTyArzBNph6EcW1x48fkVrnPYHt4JIEbDFtZbsUCeDoUut44m0pnqEb1JOEyDKDHZIWka+5i2qH4omod5zXkV9spXJ9RiM9gNlIlzQhc6A7u4uMC3pvgo8rvRONxN/I7Pf13tyDhgHQ=
+script:
+- grunt ci
+after_script:
+- cat ./dist/reports/coverage/**/lcov.info | ./node_modules/coveralls/bin/coveralls.js
