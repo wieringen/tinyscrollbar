@@ -1,0 +1,76 @@
+<style>
+    #scrollbar1
+    {
+        padding:0 25px 0 0;
+        margin:0 0 10px;
+        position:relative;
+    }
+
+    #scrollbar1 .viewport
+    {
+        height:200px;
+        overflow:hidden;
+        position:relative;
+    }
+
+    #scrollbar1 .overview
+    {
+        list-style:none;
+        position:absolute;
+        left:0;
+        top:0;
+        padding:0;
+        margin:0;
+    }
+
+    #scrollbar1 .scrollbar
+    {
+        background:transparent url(../images/bg-scrollbar-track-y.png) no-repeat 0 0;
+        position:absolute;
+        top:0;
+        right:0;
+        width:15px;
+    }
+
+    #scrollbar1 .track
+    {
+        background:transparent url(../images/bg-scrollbar-trackend-y.png) no-repeat 0 100%;
+        height:100%;
+        width:15px;
+        position:relative;
+    }
+
+    #scrollbar1 .thumb
+    {
+        background:transparent url(../images/bg-scrollbar-thumb-y.png) no-repeat 50% 100%;
+        height:20px;
+        width:25px;
+        cursor:pointer;
+        overflow:hidden;
+        position:absolute;
+        top:0;
+        left:-5px;
+    }
+
+    #scrollbar1 .thumb .end
+    {
+        background:transparent url(../images/bg-scrollbar-thumb-y.png) no-repeat 50% 0;
+        overflow:hidden;
+        height:5px;
+        width:25px;
+    }
+
+    #scrollbar1 .disable
+    {
+        display:none;
+    }
+
+    .noSelect
+    {
+        user-select:none;
+        -o-user-select:none;
+        -moz-user-select:none;
+        -khtml-user-select:none;
+        -webkit-user-select:none;
+    }
+</style>
