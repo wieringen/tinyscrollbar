@@ -1,6 +1,6 @@
 {
   "name": "tinyscrollbar",
-  "version": "2.2.5",
+  "version": "2.4.0",
   "description": "A lightweight cross browser jQuery based scrollbar.",
   "homepage": "http://www.baijs.com/tinyscrollbar",
   "main": "lib/jquery.tinyscrollbar.js",
