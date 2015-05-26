@@ -1,6 +1,8 @@
 [tinyscrollbar](http://baijs.com/tinyscrollbar) [![Build Status][travis-image]][travis-url] [![Coverage Status][coveralls-image]][coveralls-url] [![NPM version][npm-image]][npm-url]
 ==================================================
 
+** SEEKING HELP ** It seems that there are more bugs then I can fix in the spare time I have. I'm hoping there is someone willing to help me take tinyscrollbar to a new level. Preferrably someone that understands the codebase and knows how to write unit tests since they are lacking as well.
+
 Environments in which to use tinyscrollbar
 --------------------------------------
 
